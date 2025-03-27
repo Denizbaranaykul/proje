@@ -31,11 +31,12 @@
             pictureBox1 = new PictureBox();
             Close_btn = new Button();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             arama = new Button();
             arama_cubugu = new ListBox();
             label1 = new Label();
             arama_textbox = new TextBox();
-            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -76,6 +77,16 @@
             panel1.Size = new Size(1320, 276);
             panel1.TabIndex = 2;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logoEN;
+            pictureBox2.Location = new Point(3, 29);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(265, 201);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
+            // 
             // arama
             // 
             arama.Location = new Point(586, 83);
@@ -112,21 +123,20 @@
             arama_textbox.Size = new Size(352, 27);
             arama_textbox.TabIndex = 2;
             // 
-            // pictureBox2
+            // panel2
             // 
-            pictureBox2.Image = Properties.Resources.logoEN;
-            pictureBox2.Location = new Point(3, 29);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(265, 201);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Location = new Point(18, 339);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1282, 125);
+            panel2.TabIndex = 3;
             // 
             // Ana_sayfa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1332, 752);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Ana_sayfa";
             Text = "Ana_sayfa";
@@ -147,5 +157,6 @@
         private Label label1;
         private TextBox arama_textbox;
         private PictureBox pictureBox2;
+        private Panel panel2;
     }
 }
