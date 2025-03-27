@@ -72,7 +72,7 @@
             panel1.Controls.Add(arama_textbox);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(Close_btn);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(12, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(1320, 276);
             panel1.TabIndex = 2;
@@ -158,5 +158,6 @@
         private TextBox arama_textbox;
         private PictureBox pictureBox2;
         private Panel panel2;
+        private MonthCalendar monthCalendar1;
     }
 }
