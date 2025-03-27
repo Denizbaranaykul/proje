@@ -93,7 +93,7 @@
             label2.TabIndex = 5;
             label2.Text = "şifre";
             // 
-            // Form1
+            // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -104,7 +104,7 @@
             Controls.Add(maskedTextBox2);
             Controls.Add(maskedTextBox1);
             Controls.Add(button1);
-            Name = "Form1";
+            Name = "Giris";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
