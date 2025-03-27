@@ -50,11 +50,26 @@ namespace proje
                     Close_btn_Click(sender, e);
                     break;
 
-                
+
                 default:
                     MessageBox.Show("Geçersiz işlem.");
                     break;
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_edp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
