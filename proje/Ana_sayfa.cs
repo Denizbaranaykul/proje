@@ -64,12 +64,13 @@ namespace proje
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Obs obs = new Obs();
+            obs.Show();
         }
 
         private void btn_edp_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
