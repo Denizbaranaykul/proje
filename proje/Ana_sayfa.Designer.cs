@@ -31,11 +31,11 @@
             pictureBox1 = new PictureBox();
             Close_btn = new Button();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             arama = new Button();
             arama_cubugu = new ListBox();
             label1 = new Label();
             arama_textbox = new TextBox();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -44,7 +44,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Sample_User_Icon;
-            pictureBox1.Location = new Point(1167, 42);
+            pictureBox1.Location = new Point(939, 135);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 109);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -75,6 +75,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1320, 276);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logoEN;
+            pictureBox2.Location = new Point(3, 29);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(265, 201);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // arama
             // 
@@ -111,16 +121,6 @@
             arama_textbox.Name = "arama_textbox";
             arama_textbox.Size = new Size(352, 27);
             arama_textbox.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.logoEN;
-            pictureBox2.Location = new Point(3, 29);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(265, 201);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
             // 
             // Ana_sayfa
             // 
