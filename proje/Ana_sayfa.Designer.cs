@@ -44,7 +44,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Sample_User_Icon;
-            pictureBox1.Location = new Point(939, 135);
+            pictureBox1.Location = new Point(1167, 42);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 109);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
