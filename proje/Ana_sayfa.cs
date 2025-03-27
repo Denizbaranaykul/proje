@@ -10,11 +10,51 @@ using System.Windows.Forms;
 
 namespace proje
 {
-    public partial class Ana_sayfa: Form
+    public partial class Ana_sayfa : Form
     {
+        public string[] arama_dizi = { "çıkış yap" };
         public Ana_sayfa()
         {
             InitializeComponent();
+        }
+
+        private void Close_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();//uygulamayı kapatma fonksiyonu
+
+        }
+
+        private void arama_Click(object sender, EventArgs e)
+        {
+            arama_cubugu.Items.Clear();
+            string arama_x = arama_textbox.Text;
+
+            foreach (var ara in arama_dizi)
+            {
+                if (arama_x.ToLower().Contains(ara))
+                {
+                    arama_cubugu.Items.Add(ara);
+                }
+
+            }
+
+        }
+
+        private void arama_cubugu_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string secilen = arama_cubugu.SelectedItem?.ToString();
+
+            switch (secilen)
+            {
+                case "çıkış yap":
+                    Close_btn_Click(sender, e);
+                    break;
+
+                
+                default:
+                    MessageBox.Show("Geçersiz işlem.");
+                    break;
+            }
         }
     }
 }
