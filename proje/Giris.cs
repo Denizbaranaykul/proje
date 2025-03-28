@@ -1,18 +1,28 @@
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
 namespace proje
 {
     public partial class Giris : Form
     {
 
-        MySqlConnection conn= new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?\r\n");
-        MySqlCommand cmd;
-        MySqlDataAdapter adapter;
-        DataTable dt;
+        public MySqlConnection conn= new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?\r\n");
+        public MySqlCommand cmd;
+        public MySqlDataAdapter adapter;
+        public DataTable dt;
 
         public Giris()
         {
             InitializeComponent();
+        }
+
+        public static class GlobalDatabase
+        {
+            // Global olarak eriþilebilen veritabaný bileþenleri
+            public static MySqlConnection Conn { get; set; }
+            public static MySqlCommand Cmd { get; set; }
+            public static MySqlDataAdapter Adapter { get; set; }
+            public static DataTable Dt { get; set; }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,9 +46,29 @@ namespace proje
                     dt = new DataTable();
                     adapter.Fill(dt);
 
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        // Sütun adlarýný kullanarak eriþim:
+                        int id = Convert.ToInt32(row["id"]);
+                        long tc = Convert.ToInt64(row["Tc"]);
+                        string isim = row["isim"].ToString();
+                        string soyIsim = row["soy_isim"].ToString();
+                        // Diðer sütunlar için de benzer þekilde eriþebilirsiniz.
+
+                        // Elde edilen deðerleri kullanabilirsiniz:
+                        Console.WriteLine($"ID: {id}, TC: {tc}, Ýsim: {isim}, Soy Ýsim: {soyIsim}");
+                    }
+
                     // Eðer sorgudan en az bir satýr döndüyse kullanýcý bulundu demektir.
                     if (dt.Rows.Count > 0)
                     {
+                        // giriþ yapýyoz
+                        GlobalDatabase.Conn = conn;
+                        GlobalDatabase.Cmd = cmd;
+                        GlobalDatabase.Adapter = adapter;
+                        GlobalDatabase.Dt = dt;
+
+
                         Ana_sayfa ana_Sayfa = new Ana_sayfa();
                         this.Hide();
                         ana_Sayfa.Show();
@@ -65,6 +95,7 @@ namespace proje
                 MessageBox.Show("Kullanýcý adý veya þifre boþ");
             }
         }
+        
     }
 
 }

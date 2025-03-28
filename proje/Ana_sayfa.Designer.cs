@@ -52,6 +52,8 @@
             btn_ebs = new Button();
             btn_eds = new Button();
             btn_obs = new Button();
+            btn_profil = new Button();
+            lbl_profil = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -61,7 +63,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Sample_User_Icon;
-            pictureBox1.Location = new Point(1167, 42);
+            pictureBox1.Location = new Point(1167, 11);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 109);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -81,6 +83,8 @@
             // panel1
             // 
             panel1.BackColor = Color.SteelBlue;
+            panel1.Controls.Add(lbl_profil);
+            panel1.Controls.Add(btn_profil);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(arama);
             panel1.Controls.Add(arama_cubugu);
@@ -315,6 +319,24 @@
             btn_obs.UseVisualStyleBackColor = false;
             btn_obs.Click += button1_Click;
             // 
+            // btn_profil
+            // 
+            btn_profil.Location = new Point(1167, 162);
+            btn_profil.Name = "btn_profil";
+            btn_profil.Size = new Size(125, 33);
+            btn_profil.TabIndex = 7;
+            btn_profil.Text = "profil";
+            btn_profil.UseVisualStyleBackColor = true;
+            // 
+            // lbl_profil
+            // 
+            lbl_profil.Location = new Point(1167, 126);
+            lbl_profil.Name = "lbl_profil";
+            lbl_profil.Size = new Size(125, 25);
+            lbl_profil.TabIndex = 8;
+            lbl_profil.Text = "label2";
+            lbl_profil.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Ana_sayfa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -358,5 +380,7 @@
         private Button btn_kütüpanesistemi;
         private Button btn_makale;
         private Button btn_ulasim;
+        private Label lbl_profil;
+        private Button btn_profil;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static proje.Giris;
 
 namespace proje
 {
@@ -16,6 +17,9 @@ namespace proje
         public Ana_sayfa()
         {
             InitializeComponent();
+            string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
+            string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
+            lbl_profil.Text=isim+soyisim;
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
