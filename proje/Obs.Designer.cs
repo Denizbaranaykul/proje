@@ -28,51 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
             checkedListBox1 = new CheckedListBox();
             panel1 = new Panel();
             btn_yenile = new Button();
             btn_onay = new Button();
             label2 = new Label();
             label1 = new Label();
+            lbl_bolum = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(43, 124);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(332, 28);
-            comboBox1.TabIndex = 0;
             // 
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(43, 176);
+            checkedListBox1.Location = new Point(38, 132);
+            checkedListBox1.Margin = new Padding(3, 2, 3, 2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(332, 312);
+            checkedListBox1.Size = new Size(291, 220);
             checkedListBox1.TabIndex = 1;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(lbl_bolum);
             panel1.Controls.Add(btn_yenile);
             panel1.Controls.Add(btn_onay);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(checkedListBox1);
-            panel1.Controls.Add(comboBox1);
-            panel1.Location = new Point(-6, -2);
+            panel1.Location = new Point(-5, -2);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(431, 734);
+            panel1.Size = new Size(377, 550);
             panel1.TabIndex = 2;
             // 
             // btn_yenile
             // 
-            btn_yenile.Location = new Point(172, 494);
+            btn_yenile.Location = new Point(150, 370);
+            btn_yenile.Margin = new Padding(3, 2, 3, 2);
             btn_yenile.Name = "btn_yenile";
-            btn_yenile.Size = new Size(94, 29);
+            btn_yenile.Size = new Size(82, 22);
             btn_yenile.TabIndex = 5;
             btn_yenile.Text = "yenile";
             btn_yenile.UseVisualStyleBackColor = true;
@@ -80,9 +75,10 @@
             // 
             // btn_onay
             // 
-            btn_onay.Location = new Point(89, 552);
+            btn_onay.Location = new Point(78, 414);
+            btn_onay.Margin = new Padding(3, 2, 3, 2);
             btn_onay.Name = "btn_onay";
-            btn_onay.Size = new Size(257, 90);
+            btn_onay.Size = new Size(225, 68);
             btn_onay.TabIndex = 4;
             btn_onay.Text = "onayla";
             btn_onay.UseVisualStyleBackColor = true;
@@ -91,27 +87,38 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(43, 88);
+            label2.Location = new Point(38, 66);
             label2.Name = "label2";
-            label2.Size = new Size(128, 20);
+            label2.Size = new Size(105, 15);
             label2.TabIndex = 3;
             label2.Text = "bölümünüzü seçin";
             // 
             // label1
             // 
             label1.Font = new Font("Segoe UI", 16F);
-            label1.Location = new Point(89, 24);
+            label1.Location = new Point(78, 18);
             label1.Name = "label1";
-            label1.Size = new Size(257, 40);
+            label1.Size = new Size(225, 30);
             label1.TabIndex = 2;
             label1.Text = " Ders kayıt işlemleri";
             // 
+            // lbl_bolum
+            // 
+            lbl_bolum.BackColor = SystemColors.ButtonHighlight;
+            lbl_bolum.Font = new Font("Segoe UI", 12F);
+            lbl_bolum.Location = new Point(38, 98);
+            lbl_bolum.Name = "lbl_bolum";
+            lbl_bolum.Size = new Size(291, 22);
+            lbl_bolum.TabIndex = 6;
+            lbl_bolum.Text = "label3";
+            // 
             // Obs
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1591, 728);
+            ClientSize = new Size(1392, 546);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Obs";
             Text = "Obs";
             panel1.ResumeLayout(false);
@@ -120,13 +127,12 @@
         }
 
         #endregion
-
-        private ComboBox comboBox1;
         private CheckedListBox checkedListBox1;
         private Panel panel1;
         private Label label2;
         private Label label1;
         private Button btn_yenile;
         private Button btn_onay;
+        private Label lbl_bolum;
     }
 }

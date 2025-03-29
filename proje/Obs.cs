@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static proje.Giris;
 
 namespace proje
 {
@@ -22,6 +23,8 @@ namespace proje
         public Obs()
         {
             InitializeComponent();
+            lbl_bolum.Text= GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
+
         }
 
         private void btn_onay_Click(object sender, EventArgs e)
@@ -36,19 +39,17 @@ namespace proje
 
         private void btn_yenile_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add("İşletme");
-            comboBox1.Items.Add("Yönetim bilişim sistemleri");
-            comboBox1.Items.Add("Bilgisayar Mühendisliği");
+            
 
             checkedListBox1.Items.Clear();
 
-            switch (comboBox1.Text)
+            switch (lbl_bolum.Text)
             {
                 case "İşletme":
                     checkedListBox1.Items.AddRange(dersIsletme);
                     break;
 
-                case "Yönetim bilişim sistemleri":
+                case "Yönetim Bilişim Sistemleri":
                     checkedListBox1.Items.AddRange(dersYbs);
                     break;
 
