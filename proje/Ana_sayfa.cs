@@ -15,15 +15,16 @@ namespace proje
     public partial class Ana_sayfa : Form
     {
         public string[] arama_dizi = { "çıkış yap" };
-        
+
         public Ana_sayfa()
         {
-            
+
             InitializeComponent();
-            if (Giris.taban==0) { 
-            string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
-            string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
-            lbl_profil.Text=isim+soyisim;
+            if (Giris.taban == 0)
+            {
+                string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
+                string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
+                lbl_profil.Text = isim + soyisim;
             }
         }
 
@@ -79,7 +80,13 @@ namespace proje
 
         private void btn_edp_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btn_profil_Click(object sender, EventArgs e)
+        {
+            profil profil=new profil();
+            profil.Show();
         }
     }
 }
