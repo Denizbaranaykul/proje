@@ -63,7 +63,6 @@
             // 
             maskedTextBox2.Location = new Point(82, 183);
             maskedTextBox2.Margin = new Padding(3, 2, 3, 2);
-            maskedTextBox2.Mask = "00000";
             maskedTextBox2.Name = "maskedTextBox2";
             maskedTextBox2.Size = new Size(372, 23);
             maskedTextBox2.TabIndex = 2;

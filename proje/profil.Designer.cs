@@ -80,11 +80,9 @@
             // sifre_text_box
             // 
             sifre_text_box.Location = new Point(103, 397);
-            sifre_text_box.Mask = "00000";
             sifre_text_box.Name = "sifre_text_box";
             sifre_text_box.Size = new Size(333, 23);
             sifre_text_box.TabIndex = 4;
-            sifre_text_box.ValidatingType = typeof(int);
             // 
             // lbl_bolum
             // 

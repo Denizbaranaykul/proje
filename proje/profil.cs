@@ -25,7 +25,7 @@ namespace proje
 
         private void btn_degis(object sender, EventArgs e)
         {
-            int sifre = Convert.ToInt32(sifre_text_box.Text);
+            string sifre = sifre_text_box.Text;
             GlobalDatabase.Cmd.Parameters["@tc"].Value = Convert.ToInt64(lbl_Tc.Text);
             GlobalDatabase.Cmd.Parameters["@sifre"].Value = sifre;
 
