@@ -1,16 +1,17 @@
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Cryptography.X509Certificates;
 namespace proje
 {
     public partial class Giris : Form
     {
-
-        public MySqlConnection conn= new MySqlConnection("Server=192.168.1.15;Database=paü_app;Uid=ev_pc;Pwd=D3n!Z-25/11/2004?");
+            
+        public MySqlConnection conn = new MySqlConnection("Server=192.168.1.15;Database=paü_app;Uid=ev_pc;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;
         public MySqlDataAdapter adapter;
         public DataTable dt;
-
+        public static int taban = 0;
         public Giris()
         {
             InitializeComponent();
@@ -95,7 +96,14 @@ namespace proje
                 MessageBox.Show("Kullanýcý adý veya þifre boþ");
             }
         }
-        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            taban = 10;
+            Ana_sayfa ana_Sayfa = new Ana_sayfa();
+            this.Hide();
+            ana_Sayfa.Show();
+        }
     }
 
 }

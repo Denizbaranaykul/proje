@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,16 @@ namespace proje
     public partial class Ana_sayfa : Form
     {
         public string[] arama_dizi = { "çıkış yap" };
+        
         public Ana_sayfa()
         {
+            
             InitializeComponent();
+            if (Giris.taban==0) { 
             string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
             string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
             lbl_profil.Text=isim+soyisim;
+            }
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
