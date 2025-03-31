@@ -19,11 +19,34 @@ namespace proje
         public string[] dersYbs = { "İşletme", "Maliye", "Pazarlama", "Hukuk", "Programlama", "Tarih", "İngilizce", "Matematik" };
         public string[] dersBilgisayar = { "İşletme", "Mühendisliğe giriş", "Kimya", "Fizik", "Programlama", "Tarih", "İngilizce", "Matematik" };
 
-        
+
         public Obs()
         {
             InitializeComponent();
-            lbl_bolum.Text= GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
+            if (Giris.taban==0)
+            {
+
+            
+            lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
+        }
+            switch (lbl_bolum.Text)
+            {
+                case "İşletme":
+                    checkedListBox1.Items.AddRange(dersIsletme);
+                    break;
+                    
+                case "Yönetim Bilişim Sistemleri":
+                    checkedListBox1.Items.AddRange(dersYbs);
+                    break;
+
+                case "Bilgisayar Mühendisliği":
+                    checkedListBox1.Items.AddRange(dersBilgisayar);
+                    break;
+
+                default:
+                    MessageBox.Show("Lütfen geçerli bir bölüm seçiniz.");
+                    break;
+            }
 
         }
 
@@ -37,30 +60,6 @@ namespace proje
             }
         }
 
-        private void btn_yenile_Click(object sender, EventArgs e)
-        {
-            
-
-            checkedListBox1.Items.Clear();
-
-            switch (lbl_bolum.Text)
-            {
-                case "İşletme":
-                    checkedListBox1.Items.AddRange(dersIsletme);
-                    break;
-
-                case "Yönetim Bilişim Sistemleri":
-                    checkedListBox1.Items.AddRange(dersYbs);
-                    break;
-
-                case "Bilgisayar Mühendisliği":
-                    checkedListBox1.Items.AddRange(dersBilgisayar);
-                    break;
-
-                default:
-                    MessageBox.Show("Lütfen geçerli bir bölüm seçiniz.");
-                    break;
-            }
-        }
+        
     }
 }

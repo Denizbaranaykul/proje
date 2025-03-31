@@ -30,11 +30,10 @@
         {
             checkedListBox1 = new CheckedListBox();
             panel1 = new Panel();
-            btn_yenile = new Button();
+            lbl_bolum = new Label();
             btn_onay = new Button();
             label2 = new Label();
             label1 = new Label();
-            lbl_bolum = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +50,6 @@
             // 
             panel1.BackColor = Color.Gold;
             panel1.Controls.Add(lbl_bolum);
-            panel1.Controls.Add(btn_yenile);
             panel1.Controls.Add(btn_onay);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -62,16 +60,15 @@
             panel1.Size = new Size(377, 550);
             panel1.TabIndex = 2;
             // 
-            // btn_yenile
+            // lbl_bolum
             // 
-            btn_yenile.Location = new Point(150, 370);
-            btn_yenile.Margin = new Padding(3, 2, 3, 2);
-            btn_yenile.Name = "btn_yenile";
-            btn_yenile.Size = new Size(82, 22);
-            btn_yenile.TabIndex = 5;
-            btn_yenile.Text = "yenile";
-            btn_yenile.UseVisualStyleBackColor = true;
-            btn_yenile.Click += btn_yenile_Click;
+            lbl_bolum.BackColor = SystemColors.ButtonHighlight;
+            lbl_bolum.Font = new Font("Segoe UI", 12F);
+            lbl_bolum.Location = new Point(38, 98);
+            lbl_bolum.Name = "lbl_bolum";
+            lbl_bolum.Size = new Size(291, 22);
+            lbl_bolum.TabIndex = 6;
+            lbl_bolum.Text = "label3";
             // 
             // btn_onay
             // 
@@ -102,16 +99,6 @@
             label1.TabIndex = 2;
             label1.Text = " Ders kayıt işlemleri";
             // 
-            // lbl_bolum
-            // 
-            lbl_bolum.BackColor = SystemColors.ButtonHighlight;
-            lbl_bolum.Font = new Font("Segoe UI", 12F);
-            lbl_bolum.Location = new Point(38, 98);
-            lbl_bolum.Name = "lbl_bolum";
-            lbl_bolum.Size = new Size(291, 22);
-            lbl_bolum.TabIndex = 6;
-            lbl_bolum.Text = "label3";
-            // 
             // Obs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -131,7 +118,6 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private Button btn_yenile;
         private Button btn_onay;
         private Label lbl_bolum;
     }
