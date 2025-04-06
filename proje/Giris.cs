@@ -7,7 +7,7 @@ namespace proje
     public partial class Giris : Form
     {
             
-        public MySqlConnection conn = new MySqlConnection("Server=192.168.1.15;Database=paü_app;Uid=ev_pc;Pwd=D3n!Z-25/11/2004?");
+        public MySqlConnection conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;
         public MySqlDataAdapter adapter;
         public DataTable dt;

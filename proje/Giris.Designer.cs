@@ -35,15 +35,16 @@
             label1 = new Label();
             label2 = new Label();
             button2 = new Button();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(167, 225);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(187, 344);
             button1.Name = "button1";
-            button1.Size = new Size(198, 64);
+            button1.Size = new Size(226, 85);
             button1.TabIndex = 0;
             button1.Text = "giriş yap";
             button1.UseVisualStyleBackColor = true;
@@ -51,30 +52,27 @@
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(82, 125);
-            maskedTextBox1.Margin = new Padding(3, 2, 3, 2);
+            maskedTextBox1.Location = new Point(90, 211);
             maskedTextBox1.Mask = "00000000000";
             maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(372, 23);
+            maskedTextBox1.Size = new Size(425, 27);
             maskedTextBox1.TabIndex = 1;
             maskedTextBox1.ValidatingType = typeof(int);
             // 
             // maskedTextBox2
             // 
-            maskedTextBox2.Location = new Point(82, 183);
-            maskedTextBox2.Margin = new Padding(3, 2, 3, 2);
+            maskedTextBox2.Location = new Point(90, 288);
             maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(372, 23);
+            maskedTextBox2.Size = new Size(425, 27);
             maskedTextBox2.TabIndex = 2;
             maskedTextBox2.ValidatingType = typeof(int);
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logoEN;
-            pictureBox1.Location = new Point(192, 9);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(219, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(158, 93);
+            pictureBox1.Size = new Size(181, 124);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -82,36 +80,61 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(82, 108);
+            label1.Location = new Point(90, 188);
             label1.Name = "label1";
-            label1.Size = new Size(76, 15);
+            label1.Size = new Size(93, 20);
             label1.TabIndex = 4;
             label1.Text = "T.C numarası";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(82, 166);
+            label2.Location = new Point(90, 265);
             label2.Name = "label2";
-            label2.Size = new Size(29, 15);
+            label2.Size = new Size(37, 20);
             label2.TabIndex = 5;
             label2.Text = "şifre";
             // 
             // button2
             // 
-            button2.Location = new Point(423, 225);
+            button2.Location = new Point(479, 344);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(97, 64);
+            button2.Size = new Size(111, 85);
             button2.TabIndex = 6;
             button2.Text = "geliştirici girişi";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(151, 161);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(117, 24);
+            radioButton1.TabIndex = 7;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(313, 161);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(117, 24);
+            radioButton2.TabIndex = 8;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
             // Giris
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 338);
+            ClientSize = new Size(621, 451);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
             Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -119,7 +142,6 @@
             Controls.Add(maskedTextBox2);
             Controls.Add(maskedTextBox1);
             Controls.Add(button1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Giris";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -136,5 +158,7 @@
         private Label label1;
         private Label label2;
         private Button button2;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
     }
 }
