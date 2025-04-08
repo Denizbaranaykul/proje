@@ -109,12 +109,12 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(151, 161);
+            radioButton1.Location = new Point(127, 161);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(117, 24);
+            radioButton1.Size = new Size(116, 24);
             radioButton1.TabIndex = 7;
             radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
+            radioButton1.Text = "öğrenci girişi";
             radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -122,10 +122,10 @@
             radioButton2.AutoSize = true;
             radioButton2.Location = new Point(313, 161);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(117, 24);
+            radioButton2.Size = new Size(120, 24);
             radioButton2.TabIndex = 8;
             radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
+            radioButton2.Text = "yönetici_girişi";
             radioButton2.UseVisualStyleBackColor = true;
             // 
             // Giris
