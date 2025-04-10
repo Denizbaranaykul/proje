@@ -59,7 +59,7 @@ namespace proje
                 }
 
                 // Eðer sorgudan en az bir satýr döndüyse kullanýcý bulundu demektir.
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0&&sql== "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
                 {
                     // giriþ yapýyoz
                     GlobalDatabase.Conn = conn;
@@ -71,6 +71,17 @@ namespace proje
                     Ana_sayfa ana_Sayfa = new Ana_sayfa();
                     this.Hide();
                     ana_Sayfa.Show();
+                }
+                else if(dt.Rows.Count>0&&sql== "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
+                {
+                    GlobalDatabase.Conn = conn;
+                    GlobalDatabase.Cmd = cmd;
+                    GlobalDatabase.Adapter = adapter;
+                    GlobalDatabase.Dt = dt;
+
+                    yonetici yonetici = new yonetici();
+                    this.Hide();
+                    yonetici.Show();
                 }
                 else
                 {

@@ -11,44 +11,41 @@ using static proje.Giris;
 
 namespace proje
 {
-    public partial class profil : Form
+    public partial class Yon_Profilcs : Form
     {
-        public profil()
+        public Yon_Profilcs()
         {
             InitializeComponent();
-            lbl_Tc.Text=GlobalDatabase.Dt.Rows[0]["Tc"].ToString();
+            lbl_Tc.Text = GlobalDatabase.Dt.Rows[0]["Tc"].ToString();
             lbl_isim.Text = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
             lbl_soy_isim.Text = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
-            lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
-            sifre_text_box.Text = GlobalDatabase.Dt.Rows[0]["sifre"].ToString() ;
+            lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["pozisyon"].ToString();
+            sifre_text_box.Text = GlobalDatabase.Dt.Rows[0]["sifre"].ToString();
         }
 
-        private void btn_degis(object sender, EventArgs e)
+        private void btn_degistir_Click(object sender, EventArgs e)
         {
             string sifre = sifre_text_box.Text;
             GlobalDatabase.Cmd.Parameters["@tc"].Value = Convert.ToInt64(lbl_Tc.Text);
             GlobalDatabase.Cmd.Parameters["@sifre"].Value = sifre;
 
-            GlobalDatabase.Cmd.CommandText = "UPDATE ogrenci_bilgi SET sifre = @sifre WHERE Tc = @tc";
+            GlobalDatabase.Cmd.CommandText = "UPDATE yonetici_bilgi SET sifre = @sifre WHERE Tc = @tc";
 
             if (GlobalDatabase.Conn.State != System.Data.ConnectionState.Open)
                 GlobalDatabase.Conn.Open();
             int affectedRows = GlobalDatabase.Cmd.ExecuteNonQuery();
-            
 
-            
+
+
             if (affectedRows > 0)
                 MessageBox.Show("Şifre başarıyla güncellendi.");
             else
                 MessageBox.Show("Güncelleme sırasında hata oluştu, kayıt bulunamadı.");
         }
-        private void btn_geriye(object sender, EventArgs e)
+
+        private void geri_Click(object sender, EventArgs e)
         {
-            
             this.Close();
-            
-
         }
-
     }
 }

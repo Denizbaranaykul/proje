@@ -30,7 +30,7 @@ namespace proje
 
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();//uygulamayı kapatma fonksiyonu
+            Application.Exit();// kill him
 
         }
 

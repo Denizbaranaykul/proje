@@ -63,6 +63,16 @@ namespace proje.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Car {
+            get {
+                object obj = ResourceManager.GetObject("Car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap logoEN {
             get {
                 object obj = ResourceManager.GetObject("logoEN", resourceCulture);
