@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,9 +56,27 @@ namespace proje
         {
             secilen.Clear();
 
+            
+            
+            try
+            {
+            GlobalDatabase.Conn.Open();
+            string sorgu = "INSERT INTO ders_notlari (OgrenciId,DersAdi) VALUES(@OgrenciId,@DersAdi)";
+            MySqlCommand mySqlCommand = new MySqlCommand(sorgu,GlobalDatabase.Conn);
+                int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
             foreach (var item in checkedListBox1.CheckedItems)
             {
-                secilen.Add(item.ToString());
+                
+                    mySqlCommand.Parameters.Clear();
+                    mySqlCommand.Parameters.AddWithValue("@OgrenciId", ogrenciId);   
+                    mySqlCommand.Parameters.AddWithValue("@DersAdi", item.ToString());
+                    mySqlCommand.ExecuteNonQuery();//sorgu çalıştırma
+            }
+                MessageBox.Show("Seçilen dersler başarıyla eklendi.");
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show("Ders ismi eklenirken bir hata oluştu : "+ex.Message);
             }
         }
 
