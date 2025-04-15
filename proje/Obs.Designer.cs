@@ -37,10 +37,11 @@
             label1 = new Label();
             panel3 = new Panel();
             label3 = new Label();
-            listBox1 = new ListBox();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // checkedListBox1
@@ -114,8 +115,8 @@
             // panel3
             // 
             panel3.BackColor = Color.SteelBlue;
+            panel3.Controls.Add(dataGridView1);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(listBox1);
             panel3.Controls.Add(button1);
             panel3.Location = new Point(411, 1);
             panel3.Margin = new Padding(3, 4, 3, 4);
@@ -133,17 +134,6 @@
             label3.Text = "Ders Notları";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // listBox1
-            // 
-            listBox1.Font = new Font("Segoe UI", 18F);
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 41;
-            listBox1.Location = new Point(37, 124);
-            listBox1.Margin = new Padding(3, 4, 3, 4);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(538, 373);
-            listBox1.TabIndex = 1;
-            // 
             // button1
             // 
             button1.Location = new Point(179, 552);
@@ -154,6 +144,15 @@
             button1.Text = "Yenile";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(59, 127);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(554, 326);
+            dataGridView1.TabIndex = 4;
             // 
             // Obs
             // 
@@ -167,6 +166,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -180,7 +180,7 @@
         private Panel panel2;
         private Panel panel3;
         private Label label3;
-        private ListBox listBox1;
         private Button button1;
+        private DataGridView dataGridView1;
     }
 }

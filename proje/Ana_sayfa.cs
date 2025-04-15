@@ -22,18 +22,18 @@ namespace proje
             InitializeComponent();
             if (Giris.taban == 0)
             {
-                string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();
-                string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
-                lbl_profil.Text = isim + soyisim;
+                string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();//girenk kullanıcının ismi
+                string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();//giren kullanıcının soy adı
+                lbl_profil.Text = isim +" "+soyisim;
             }
         }
-
+        //programı kapatıyor
         private void Close_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();// kill him
 
         }
-
+        //arama yapmayı başlatıyor
         private void arama_Click(object sender, EventArgs e)
         {
             arama_cubugu.Items.Clear();
@@ -49,7 +49,7 @@ namespace proje
             }
 
         }
-
+        //arama çubğuna 2 kere tıklanınca olayın çalışmasını sağlıyor
         private void arama_cubugu_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string secilen = arama_cubugu.SelectedItem?.ToString();
@@ -71,7 +71,7 @@ namespace proje
         {
 
         }
-
+        //öğrenci bilgi sistemini açıyor
         private void button1_Click(object sender, EventArgs e)
         {
             Obs obs = new Obs();
@@ -80,9 +80,10 @@ namespace proje
 
         private void btn_edp_Click(object sender, EventArgs e)
         {
-
+            mesaj_form msj=new mesaj_form();
+            msj.Show();
         }
-
+        //öğrenci profili formunu açıyor
         private void btn_profil_Click(object sender, EventArgs e)
         {
             profil profil=new profil();

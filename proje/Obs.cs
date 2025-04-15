@@ -50,17 +50,18 @@ namespace proje
             }
             GlobalDatabase.Conn.Close();
         }
+        public int ogren= Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
         public Obs()
         {
             InitializeComponent();
-            if (Giris.taban == 0)
+            if (Giris.taban == 0)//geliştirici girişi mi diye kontrrol
             {
 
 
-                lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
-                string query = "SELECT ders FROM dersler";
+                lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();//bölüm kısmını data base den çekme
+                string query = "SELECT ders FROM dersler";//dersleri yazdırmak için sql komutu
                 Okuma(derslers, query, "ders", 1);
-                string query2 = "SELECT dersAdi,VizeNotu,FinalNotu FROM ders_notlari";
+                string query2 = "SELECT dersAdi,VizeNotu,FinalNotu FROM ders_notlari";//dersleri ve notları tablo şeklinde yazdırma
                 Okuma(derslersecilen, query2, "dersAdi", 2);
 
 
@@ -76,10 +77,7 @@ namespace proje
                     {
                         checkedListBox1.Items.Add(item);
                     }
-                    foreach (string item in derslersecilen)
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    
                     break;
 
                 case "Bilgisayar Mühendisliği":
@@ -92,7 +90,7 @@ namespace proje
             }
 
         }
-
+        //dersleri veri tabanına ekleme fonksiyonu
         private void btn_onay_Click(object sender, EventArgs e)
         {
             secilen.Clear();
@@ -101,14 +99,15 @@ namespace proje
 
             try
             {
-                GlobalDatabase.Conn.Open();
-                string sorgu = "INSERT INTO ders_notlari (OgrenciId,DersAdi) VALUES(@OgrenciId,@DersAdi)";
+                GlobalDatabase.Conn.Open();//sorguyu aç
+                string sorgu = "INSERT INTO ders_notlari (OgrenciId,DersAdi) VALUES(@OgrenciId,@DersAdi)";//sorgu
                 MySqlCommand mySqlCommand = new MySqlCommand(sorgu, GlobalDatabase.Conn);
-                int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
+                int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);//id yi çek
+                
                 int kredi = 0;
-                string insertSorgu = "INSERT INTO ders_notlari (OgrenciId, DersAdi) VALUES(@OgrenciId, @DersAdi)";
+                string insertSorgu = "INSERT INTO ders_notlari (OgrenciId, DersAdi) VALUES(@OgrenciId, @DersAdi)";//sorgu 2
                 MySqlCommand insertCommand = new MySqlCommand(insertSorgu, GlobalDatabase.Conn);
-                foreach (var item in checkedListBox1.CheckedItems)
+                foreach (var item in checkedListBox1.CheckedItems)//kredi kontrol sorgusu
                 {
                     string dersAdi = item.ToString();
 
@@ -128,7 +127,7 @@ namespace proje
 
                 if (kredi <= 30)
                 {
-                    foreach (var item in checkedListBox1.CheckedItems)
+                    foreach (var item in checkedListBox1.CheckedItems)//dersleri ekleme döngüsü
                     {
 
                         mySqlCommand.Parameters.Clear();
@@ -159,8 +158,19 @@ namespace proje
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query2 = "SELECT dersAdi,VizeNotu,FinalNotu FROM ders_notlari";
-            Okuma(derslersecilen, query2, "dersAdi", 2);
+            Yazma(ogren);
+            
+        }
+        private void Yazma(int ogrenciId)
+        {
+            string query = "SELECT dersAdi, VizeNotu, FinalNotu FROM ders_notlari WHERE OgrenciId = @ogrenciId";
+            MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
+            cmd.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

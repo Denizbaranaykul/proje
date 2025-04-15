@@ -32,11 +32,11 @@ namespace proje
             {
                 conn.Open();
 
-                // SQL sorgusu: ogrenci_bilgi tablosundan girilen T.C ve sifre deðerlerine sahip kaydý bul.
+                // SQL sorgusu: ogrenci_bilgi tablosundan veya yonetici_bilgi tablosundan girilen T.C ve sifre deðerlerine sahip kaydý bul.
                 
                 cmd = new MySqlCommand(sql, conn);
 
-                // Parametreleri kullanarak sorguda SQL enjeksiyonunu engelliyoruz.
+                
                 cmd.Parameters.AddWithValue("@tc", Convert.ToInt64(maskedTextBox1.Text));
                 cmd.Parameters.AddWithValue("@sifre", maskedTextBox2.Text);
 
@@ -52,13 +52,14 @@ namespace proje
                     long tc = Convert.ToInt64(row["Tc"]);
                     string isim = row["isim"].ToString();
                     string soyIsim = row["soy_isim"].ToString();
-                    // Diðer sütunlar için de benzer þekilde eriþebilirsiniz.
+                    // sütunlara eriþme
 
-                    // Elde edilen deðerleri kullanabilirsiniz:
-                    Console.WriteLine($"ID: {id}, TC: {tc}, Ýsim: {isim}, Soy Ýsim: {soyIsim}");
+                   
+                   
                 }
 
-                // Eðer sorgudan en az bir satýr döndüyse kullanýcý bulundu demektir.
+               //coutnlar0 dan büyükse böyle bir kullanýcý bulunmuþ olur tc zaten uniqe 
+                //öðrenci giriþi
                 if (dt.Rows.Count > 0&&sql== "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
                 {
                     // giriþ yapýyoz
@@ -72,6 +73,7 @@ namespace proje
                     this.Hide();
                     ana_Sayfa.Show();
                 }
+                //yönetici bilgi sistemine giriþ
                 else if(dt.Rows.Count>0&&sql== "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
                 {
                     GlobalDatabase.Conn = conn;
@@ -96,18 +98,18 @@ namespace proje
             {
                 if (conn.State == ConnectionState.Open)
                 {
-                    conn.Close();
+                    conn.Close();//sql sorgusunu kapatýyoz
                 }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)
+            if(radioButton1.Checked)//öðrenci giriþi tikliyse çalýþsýn
             {
-                if (!string.IsNullOrEmpty(maskedTextBox1.Text) && !string.IsNullOrEmpty(maskedTextBox2.Text))
+                if (!string.IsNullOrEmpty(maskedTextBox1.Text) && !string.IsNullOrEmpty(maskedTextBox2.Text))//textboxlar boþ veya null deðilse çalýþsýn
                 {
-                    string sql = "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre";
+                    string sql = "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre";//öðrenci bilgi için sorgu komutu
                     girmek(sql);
                 }
                 else
@@ -115,9 +117,9 @@ namespace proje
                     MessageBox.Show("Kullanýcý adý veya þifre boþ");
                 }
             }
-            else if (radioButton2.Checked) 
+            else if (radioButton2.Checked) //yönetici giriþi tikliyse çalýþsýn
             {
-                string sql2 = "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre";
+                string sql2 = "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre";// yönetici bilgi için sorgu komutu
                 girmek(sql2);
             }
             else
@@ -127,7 +129,7 @@ namespace proje
             
         }
        
-
+        //veritabaný baðlantýsý saðlanamadýðýnda girmek için
         private void button2_Click(object sender, EventArgs e)
         {
             taban = 10;

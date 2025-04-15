@@ -13,6 +13,7 @@ namespace proje
 {
     public partial class profil : Form
     {
+        //profil formu başlarken kullanıcının tüm verileri işleniyor
         public profil()
         {
             InitializeComponent();
@@ -22,14 +23,14 @@ namespace proje
             lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();
             sifre_text_box.Text = GlobalDatabase.Dt.Rows[0]["sifre"].ToString() ;
         }
-
+        //sadece şifre değiştiriliyor zaten şifre değiştirme yeri
         private void btn_degis(object sender, EventArgs e)
         {
             string sifre = sifre_text_box.Text;
             GlobalDatabase.Cmd.Parameters["@tc"].Value = Convert.ToInt64(lbl_Tc.Text);
             GlobalDatabase.Cmd.Parameters["@sifre"].Value = sifre;
 
-            GlobalDatabase.Cmd.CommandText = "UPDATE ogrenci_bilgi SET sifre = @sifre WHERE Tc = @tc";
+            GlobalDatabase.Cmd.CommandText = "UPDATE ogrenci_bilgi SET sifre = @sifre WHERE Tc = @tc";//tc siz değişim yapılmadığı için böyle
 
             if (GlobalDatabase.Conn.State != System.Data.ConnectionState.Open)
                 GlobalDatabase.Conn.Open();
@@ -42,6 +43,7 @@ namespace proje
             else
                 MessageBox.Show("Güncelleme sırasında hata oluştu, kayıt bulunamadı.");
         }
+        //bir önce ki forma yani ana forma gidiyoır
         private void btn_geriye(object sender, EventArgs e)
         {
             

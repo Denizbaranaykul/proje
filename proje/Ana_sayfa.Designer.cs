@@ -46,7 +46,7 @@
             btn_genelduyurular = new Button();
             btn_kütüpanesistemi = new Button();
             btn_kariyermerkezi = new Button();
-            btn_edp = new Button();
+            btn_msj = new Button();
             btn_ogrencikulupleri = new Button();
             btn_ak = new Button();
             btn_dpvm = new Button();
@@ -172,7 +172,7 @@
             panel2.Controls.Add(btn_genelduyurular);
             panel2.Controls.Add(btn_kütüpanesistemi);
             panel2.Controls.Add(btn_kariyermerkezi);
-            panel2.Controls.Add(btn_edp);
+            panel2.Controls.Add(btn_msj);
             panel2.Controls.Add(btn_ogrencikulupleri);
             panel2.Controls.Add(btn_ak);
             panel2.Controls.Add(btn_dpvm);
@@ -256,16 +256,16 @@
             btn_kariyermerkezi.Text = "Kariyer Merkezi";
             btn_kariyermerkezi.UseVisualStyleBackColor = false;
             // 
-            // btn_edp
+            // btn_msj
             // 
-            btn_edp.BackColor = Color.Beige;
-            btn_edp.Location = new Point(586, 143);
-            btn_edp.Name = "btn_edp";
-            btn_edp.Size = new Size(194, 95);
-            btn_edp.TabIndex = 7;
-            btn_edp.Text = "Erasmus Değişim Programı";
-            btn_edp.UseVisualStyleBackColor = false;
-            btn_edp.Click += btn_edp_Click;
+            btn_msj.BackColor = Color.Beige;
+            btn_msj.Location = new Point(586, 143);
+            btn_msj.Name = "btn_msj";
+            btn_msj.Size = new Size(194, 95);
+            btn_msj.TabIndex = 7;
+            btn_msj.Text = "Mesaj sistemi";
+            btn_msj.UseVisualStyleBackColor = false;
+            btn_msj.Click += btn_edp_Click;
             // 
             // btn_ogrencikulupleri
             // 
@@ -372,7 +372,7 @@
         private Button btn_ebs;
         private Button btn_eds;
         private Button btn_kariyermerkezi;
-        private Button btn_edp;
+        private Button btn_msj;
         private Button btn_ogrencikulupleri;
         private Button btn_ak;
         private Button btn_harita;
