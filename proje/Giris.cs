@@ -5,9 +5,11 @@ using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography.X509Certificates;
 namespace proje
 {
+
     public partial class Giris : Form
     {
-            
+        public static Ana_sayfa anaSayfaForm;   
+        public static Giris girisFormu;
         public MySqlConnection conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;
         public MySqlDataAdapter adapter;
@@ -16,6 +18,7 @@ namespace proje
         public Giris()
         {
             InitializeComponent();
+            girisFormu = this;
         }
 
         public static class GlobalDatabase
@@ -69,9 +72,14 @@ namespace proje
                     GlobalDatabase.Dt = dt;
 
 
-                    Ana_sayfa ana_Sayfa = new Ana_sayfa();
+                   
+                    if (anaSayfaForm == null || anaSayfaForm.IsDisposed)
+                    {
+                        anaSayfaForm = new Ana_sayfa();
+                    }
+                    anaSayfaForm.Show();
                     this.Hide();
-                    ana_Sayfa.Show();
+                    
                 }
                 //yönetici bilgi sistemine giriþ
                 else if(dt.Rows.Count>0&&sql== "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")

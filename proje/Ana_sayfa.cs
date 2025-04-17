@@ -18,17 +18,17 @@ namespace proje
         public string tam_isim;
         public Ana_sayfa()
         {
-            
+
             InitializeComponent();
             if (Giris.taban == 0)
             {
                 string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();//girenk kullanıcının ismi
                 string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();//giren kullanıcının soy adı
-                lbl_profil.Text = isim +" "+soyisim;
+                lbl_profil.Text = isim + " " + soyisim;
 
-                
+
             }
-            tam_isim=lbl_profil.Text;
+            tam_isim = lbl_profil.Text;
         }
         //programı kapatıyor
         private void Close_btn_Click(object sender, EventArgs e)
@@ -83,14 +83,20 @@ namespace proje
 
         private void btn_edp_Click(object sender, EventArgs e)
         {
-            mesaj_form msj=new mesaj_form();
+            mesaj_form msj = new mesaj_form();
             msj.Show();
         }
         //öğrenci profili formunu açıyor
         private void btn_profil_Click(object sender, EventArgs e)
         {
-            profil profil=new profil();
+            profil profil = new profil();
             profil.Show();
+        }
+
+        private void btn_otrm_kapat_Click(object sender, EventArgs e)
+        {
+          anaSayfaForm.Hide();
+            Giris.girisFormu.Show();
         }
     }
 }

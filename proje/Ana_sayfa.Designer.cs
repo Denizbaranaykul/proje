@@ -54,6 +54,7 @@
             btn_ebs = new Button();
             btn_eds = new Button();
             btn_obs = new Button();
+            btn_otrm_kapat = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -72,7 +73,7 @@
             // 
             // Close_btn
             // 
-            Close_btn.Location = new Point(1167, 201);
+            Close_btn.Location = new Point(1167, 241);
             Close_btn.Name = "Close_btn";
             Close_btn.Size = new Size(125, 29);
             Close_btn.TabIndex = 1;
@@ -83,6 +84,7 @@
             // panel1
             // 
             panel1.BackColor = Color.SteelBlue;
+            panel1.Controls.Add(btn_otrm_kapat);
             panel1.Controls.Add(lbl_profil);
             panel1.Controls.Add(btn_profil);
             panel1.Controls.Add(pictureBox2);
@@ -338,6 +340,16 @@
             btn_obs.UseVisualStyleBackColor = false;
             btn_obs.Click += button1_Click;
             // 
+            // btn_otrm_kapat
+            // 
+            btn_otrm_kapat.Location = new Point(1167, 206);
+            btn_otrm_kapat.Name = "btn_otrm_kapat";
+            btn_otrm_kapat.Size = new Size(125, 29);
+            btn_otrm_kapat.TabIndex = 9;
+            btn_otrm_kapat.Text = "oturmu kapat";
+            btn_otrm_kapat.UseVisualStyleBackColor = true;
+            btn_otrm_kapat.Click += btn_otrm_kapat_Click;
+            // 
             // Ana_sayfa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -383,5 +395,6 @@
         private Button btn_ulasim;
         private Label lbl_profil;
         private Button btn_profil;
+        private Button btn_otrm_kapat;
     }
 }
