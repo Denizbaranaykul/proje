@@ -15,17 +15,20 @@ namespace proje
     public partial class Ana_sayfa : Form
     {
         public string[] arama_dizi = { "çıkış yap" };
-
+        public string tam_isim;
         public Ana_sayfa()
         {
-
+            
             InitializeComponent();
             if (Giris.taban == 0)
             {
                 string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();//girenk kullanıcının ismi
                 string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();//giren kullanıcının soy adı
                 lbl_profil.Text = isim +" "+soyisim;
+
+                
             }
+            tam_isim=lbl_profil.Text;
         }
         //programı kapatıyor
         private void Close_btn_Click(object sender, EventArgs e)
