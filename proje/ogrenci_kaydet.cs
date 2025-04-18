@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static proje.Giris;
 using MySql.Data.MySqlClient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace proje
 {
@@ -185,10 +186,14 @@ namespace proje
         private void button2_Click(object sender, EventArgs e)
         {
             string query = "UPDATE ogrenci_bilgi SET durum = @durum WHERE isim = @isim and soy_isim=@soy_isim";
+            dondur_akitf_et("pasif", query);
+        }
+        private void dondur_akitf_et(string durum,string sorgu)
+        {
             GlobalDatabase.Conn.Open();
             foreach (var item in checkedListBox2.CheckedItems)
             {
-                
+
                 string tam_isim = item.ToString();
                 string[] dizi = tam_isim.Split("-");
 
@@ -196,14 +201,19 @@ namespace proje
                 string ad = dizi[0].Trim();   // isim
                 string soyad = dizi[1].Trim(); // soyisim
 
-                MySqlCommand komutQuery = new MySqlCommand(query, GlobalDatabase.Conn);
-                komutQuery.Parameters.AddWithValue("@durum", "pasif");
+                MySqlCommand komutQuery = new MySqlCommand(sorgu, GlobalDatabase.Conn);
+                komutQuery.Parameters.AddWithValue("@durum",durum);
                 komutQuery.Parameters.AddWithValue("@isim", dizi[0]);
                 komutQuery.Parameters.AddWithValue("@soy_isim", dizi[1]);
                 komutQuery.ExecuteNonQuery();
             }
             GlobalDatabase.Conn.Close();
             box();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE ogrenci_bilgi SET durum = @durum WHERE isim = @isim and soy_isim=@soy_isim";
+            dondur_akitf_et("aktif", query);
         }
     }
 }
