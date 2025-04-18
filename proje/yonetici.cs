@@ -30,6 +30,11 @@ namespace proje
 
        private void btn_ogrenci_ekle_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"])==9|| Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 3 || Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 6)
+            {
+            ogrenci_kaydet ogrenci_Kaydet = new ogrenci_kaydet();
+            ogrenci_Kaydet.Show();
+            }
           
             
             

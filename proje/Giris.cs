@@ -8,7 +8,7 @@ namespace proje
 
     public partial class Giris : Form
     {
-        public static Ana_sayfa anaSayfaForm;   
+        public static Ana_sayfa anaSayfaForm;
         public static Giris girisFormu;
         public MySqlConnection conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;
@@ -17,8 +17,10 @@ namespace proje
         public static int taban = 0;
         public Giris()
         {
+
             InitializeComponent();
             girisFormu = this;
+
         }
 
         public static class GlobalDatabase
@@ -36,10 +38,10 @@ namespace proje
                 conn.Open();
 
                 // SQL sorgusu: ogrenci_bilgi tablosundan veya yonetici_bilgi tablosundan girilen T.C ve sifre deðerlerine sahip kaydý bul.
-                
+
                 cmd = new MySqlCommand(sql, conn);
 
-                
+
                 cmd.Parameters.AddWithValue("@tc", Convert.ToInt64(maskedTextBox1.Text));
                 cmd.Parameters.AddWithValue("@sifre", maskedTextBox2.Text);
 
@@ -57,13 +59,13 @@ namespace proje
                     string soyIsim = row["soy_isim"].ToString();
                     // sütunlara eriþme
 
-                   
-                   
+
+
                 }
 
-               //coutnlar0 dan büyükse böyle bir kullanýcý bulunmuþ olur tc zaten uniqe 
+                //coutnlar0 dan büyükse böyle bir kullanýcý bulunmuþ olur tc zaten uniqe 
                 //öðrenci giriþi
-                if (dt.Rows.Count > 0&&sql== "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
+                if (dt.Rows.Count > 0 && sql == "SELECT * FROM ogrenci_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
                 {
                     // giriþ yapýyoz
                     GlobalDatabase.Conn = conn;
@@ -72,17 +74,17 @@ namespace proje
                     GlobalDatabase.Dt = dt;
 
 
-                   
+
                     if (anaSayfaForm == null || anaSayfaForm.IsDisposed)
                     {
                         anaSayfaForm = new Ana_sayfa();
                     }
                     anaSayfaForm.Show();
                     this.Hide();
-                    
+
                 }
                 //yönetici bilgi sistemine giriþ
-                else if(dt.Rows.Count>0&&sql== "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
+                else if (dt.Rows.Count > 0 && sql == "SELECT * FROM yonetici_bilgi WHERE `Tc` = @Tc AND sifre = @sifre")
                 {
                     GlobalDatabase.Conn = conn;
                     GlobalDatabase.Cmd = cmd;
@@ -113,7 +115,7 @@ namespace proje
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)//öðrenci giriþi tikliyse çalýþsýn
+            if (radioButton1.Checked)//öðrenci giriþi tikliyse çalýþsýn
             {
                 if (!string.IsNullOrEmpty(maskedTextBox1.Text) && !string.IsNullOrEmpty(maskedTextBox2.Text))//textboxlar boþ veya null deðilse çalýþsýn
                 {
@@ -134,9 +136,9 @@ namespace proje
             {
                 MessageBox.Show("Giriþ tipini seçmemiþsiniz");
             }
-            
+
         }
-       
+
         //veritabaný baðlantýsý saðlanamadýðýnda girmek için
         private void button2_Click(object sender, EventArgs e)
         {
@@ -145,6 +147,64 @@ namespace proje
             this.Hide();
             ana_Sayfa.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dosyaSec = new OpenFileDialog();
+            dosyaSec.Title = "Lütfen sýnav sonuç belgenizi yükleyiniz";
+            dosyaSec.Filter = "PDF Dosyalarý (*.pdf)|*.pdf";
+
+            if (dosyaSec.ShowDialog() == DialogResult.OK)
+            {
+                string dosyaYolu = dosyaSec.FileName;
+                MessageBox.Show("Seçilen dosya: " + dosyaYolu);
+
+                // Örnek: Seçilen dosyayý bir klasöre kopyala (Proje klasörü altýnda "uploads" klasörü oluþturulmuþ varsayýlýr)
+                string hedefKlasor = Path.Combine(Application.StartupPath, "uploads");
+                Directory.CreateDirectory(hedefKlasor); // Klasör yoksa oluþtur
+                string hedefYol = Path.Combine(hedefKlasor, Path.GetFileName(dosyaYolu));
+
+                File.Copy(dosyaYolu, hedefYol, true); // overwrite: true
+                byte[] dosyaVerisi = File.ReadAllBytes(dosyaYolu);
+
+                // Veritabaný baðlantýsýný kontrol et
+                if (GlobalDatabase.Conn == null || GlobalDatabase.Conn.State == ConnectionState.Closed)
+                {
+                    try
+                    {
+                        // Baðlantýyý aç
+                        GlobalDatabase.Conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
+                        GlobalDatabase.Conn.Open();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Veritabaný baðlantýsý saðlanamadý: " + ex.Message);
+                        return;
+                    }
+                }
+
+                string query = "INSERT INTO belgeler (dosya_adi, dosya_icerik) VALUES (@ad, @icerik)";
+                MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
+                cmd.Parameters.AddWithValue("@ad", Path.GetFileName(dosyaYolu));
+                cmd.Parameters.Add("@icerik", MySqlDbType.Blob).Value = dosyaVerisi;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Dosya baþarýyla yüklendi.");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Dosya yüklenirken hata oluþtu: " + ex.Message);
+                }
+                finally
+                {
+                    // Baðlantýyý kapat
+                    GlobalDatabase.Conn.Close();
+                }
+            }
+        }
+
     }
 
 }

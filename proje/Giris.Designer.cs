@@ -37,6 +37,7 @@
             button2 = new Button();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -128,11 +129,22 @@
             radioButton2.Text = "yönetici_girişi";
             radioButton2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            button3.Location = new Point(187, 435);
+            button3.Name = "button3";
+            button3.Size = new Size(226, 85);
+            button3.TabIndex = 9;
+            button3.Text = "kaydol";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 451);
+            ClientSize = new Size(621, 522);
+            Controls.Add(button3);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(button2);
@@ -160,5 +172,6 @@
         private Button button2;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
+        private Button button3;
     }
 }
