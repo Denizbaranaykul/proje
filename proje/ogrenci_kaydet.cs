@@ -17,8 +17,32 @@ namespace proje
         public ogrenci_kaydet()
         {
             InitializeComponent();
+            box();
         }
+        private void box()
+        {
+            checkedListBox1.Items.Clear();
+            checkedListBox2.Items.Clear();
+            string query = "SELECT isim,soy_isim,durum FROM ogrenci_bilgi WHERE silindi=0";
+            GlobalDatabase.Conn.Open();
 
+            MySqlCommand komut = new MySqlCommand(query, GlobalDatabase.Conn);
+            using (MySqlDataReader reader = komut.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string isim = reader.GetString("isim");
+                    isim += "-";
+                    isim += reader.GetString("soy_isim");
+                    checkedListBox1.Items.Add(isim);
+                    isim += "-";
+                    isim += reader.GetString("durum");
+                    checkedListBox2.Items.Add(isim);
+
+                }
+            }
+            GlobalDatabase.Conn.Close();
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             DosyaIndirVeSil();
@@ -85,18 +109,101 @@ namespace proje
         private void button1_Click(object sender, EventArgs e)
         {
             GlobalDatabase.Conn.Open();
-            string sorgu = "insert into ogrenci_bilgi (Tc,isim,soy_isim,bolum,email,sifre) VALUES(@tc,@isim,@soy_isim,@bolum,@email,@sifre)";
+            string sorgu = "insert into ogrenci_bilgi (Tc,isim,soy_isim,bolum,email,sifre,durum) VALUES(@tc,@isim,@soy_isim,@bolum,@email,@sifre,@durum)";
 
-            MySqlCommand cmd = new MySqlCommand(sorgu,GlobalDatabase.Conn);
-            cmd.Parameters.AddWithValue("@tc",maskedTextBox1.Text);
+            MySqlCommand cmd = new MySqlCommand(sorgu, GlobalDatabase.Conn);
+            cmd.Parameters.AddWithValue("@tc", maskedTextBox1.Text);
             cmd.Parameters.AddWithValue("@isim", textBox1.Text);
             cmd.Parameters.AddWithValue("@soy_isim", textBox2.Text);
             cmd.Parameters.AddWithValue("@bolum", textBox3.Text);
             cmd.Parameters.AddWithValue("@email", textBox4.Text);
             cmd.Parameters.AddWithValue("@sifre", textBox5.Text);
+            cmd.Parameters.AddWithValue("@durum", "aktif");
             cmd.ExecuteNonQuery();
             MessageBox.Show("öğrenci başarı ile eklendi");
+            GlobalDatabase.Conn.Close();
+            box();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (checkedListBox1.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz öğrencileri seçin.");
+                return;
+            }
+            DialogResult result = MessageBox.Show("Seçilen öğrenciler silinecek. Emin misiniz?", "Onay", MessageBoxButtons.YesNo);
+            if (result != DialogResult.Yes) return;
+
+            try
+            {
+                GlobalDatabase.Conn.Open();
+                foreach (var item in checkedListBox1.CheckedItems)
+                {
+                    string tam_isim = item.ToString();
+                    string[] dizi = tam_isim.Split("-");
+
+                    // Ad ve soyadı alıyoruz
+                    string ad = dizi[0].Trim();   // isim
+                    string soyad = dizi[1].Trim(); // soyisim
+
+                    // Öğrencinin id'sini veritabanından alıyoruz
+                    string sqlGetId = "SELECT id FROM ogrenci_bilgi WHERE isim = @isim AND soy_isim = @soyisim AND silindi = 0";
+                    using (MySqlCommand komutGetId = new MySqlCommand(sqlGetId, GlobalDatabase.Conn))
+                    {
+                        komutGetId.Parameters.AddWithValue("@isim", ad);
+                        komutGetId.Parameters.AddWithValue("@soyisim", soyad);
+
+                        object resultId = komutGetId.ExecuteScalar();
+                        if (resultId != null)
+                        {
+                            int id = Convert.ToInt32(resultId);
+
+                            // Öğrenciyi silme işlemi (soft delete)
+                            string sqlUpdate = "UPDATE ogrenci_bilgi SET silindi = 1 WHERE id = @id";
+                            using (MySqlCommand komutUpdate = new MySqlCommand(sqlUpdate, GlobalDatabase.Conn))
+                            {
+                                komutUpdate.Parameters.AddWithValue("@id", id);
+                                komutUpdate.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                GlobalDatabase.Conn.Close();
+                MessageBox.Show("Seçilen öğrenciler silindi.");
+                box(); // Listeleri güncellemek için yeniden çağırıyoruz.
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE ogrenci_bilgi SET durum = @durum WHERE isim = @isim and soy_isim=@soy_isim";
+            GlobalDatabase.Conn.Open();
+            foreach (var item in checkedListBox2.CheckedItems)
+            {
+                
+                string tam_isim = item.ToString();
+                string[] dizi = tam_isim.Split("-");
+
+                // Ad ve soyadı alıyoruz
+                string ad = dizi[0].Trim();   // isim
+                string soyad = dizi[1].Trim(); // soyisim
+
+                MySqlCommand komutQuery = new MySqlCommand(query, GlobalDatabase.Conn);
+                komutQuery.Parameters.AddWithValue("@durum", "pasif");
+                komutQuery.Parameters.AddWithValue("@isim", dizi[0]);
+                komutQuery.Parameters.AddWithValue("@soy_isim", dizi[1]);
+                komutQuery.ExecuteNonQuery();
+            }
+            GlobalDatabase.Conn.Close();
+            box();
         }
     }
 }

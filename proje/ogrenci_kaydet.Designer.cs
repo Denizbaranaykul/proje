@@ -46,6 +46,8 @@
             button2 = new Button();
             button3 = new Button();
             label7 = new Label();
+            checkedListBox2 = new CheckedListBox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // button4
@@ -168,44 +170,66 @@
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(34, 399);
+            checkedListBox1.Location = new Point(673, 68);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(395, 312);
             checkedListBox1.TabIndex = 14;
             // 
             // button2
             // 
-            button2.Location = new Point(476, 399);
+            button2.Location = new Point(563, 604);
             button2.Name = "button2";
             button2.Size = new Size(191, 99);
             button2.TabIndex = 15;
             button2.Text = "dondur";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(476, 612);
+            button3.Location = new Point(1145, 142);
             button3.Name = "button3";
-            button3.Size = new Size(191, 99);
+            button3.Size = new Size(144, 114);
             button3.TabIndex = 16;
             button3.Text = "sil";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 19F);
-            label7.Location = new Point(110, 338);
+            label7.Location = new Point(749, 7);
             label7.Name = "label7";
             label7.Size = new Size(216, 45);
             label7.TabIndex = 17;
             label7.Text = "öğrenci listesi";
             // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Location = new Point(464, 484);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(395, 114);
+            checkedListBox2.TabIndex = 18;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 19F);
+            label8.Location = new Point(501, 426);
+            label8.Name = "label8";
+            label8.Size = new Size(286, 45);
+            label8.TabIndex = 19;
+            label8.Text = "aktif öğrenci listesi";
+            // 
             // ogrenci_kaydet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(691, 723);
+            ClientSize = new Size(1328, 715);
+            Controls.Add(label8);
+            Controls.Add(checkedListBox2);
             Controls.Add(label7);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -250,5 +274,7 @@
         private Button button2;
         private Button button3;
         private Label label7;
+        private CheckedListBox checkedListBox2;
+        private Label label8;
     }
 }
