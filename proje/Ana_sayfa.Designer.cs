@@ -31,6 +31,7 @@
             pictureBox1 = new PictureBox();
             Close_btn = new Button();
             panel1 = new Panel();
+            btn_otrm_kapat = new Button();
             lbl_profil = new Label();
             btn_profil = new Button();
             pictureBox2 = new PictureBox();
@@ -51,10 +52,9 @@
             btn_ak = new Button();
             btn_dpvm = new Button();
             btn_oibs = new Button();
-            btn_ebs = new Button();
             btn_eds = new Button();
             btn_obs = new Button();
-            btn_otrm_kapat = new Button();
+            btn_ebs = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -98,6 +98,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1320, 276);
             panel1.TabIndex = 2;
+            // 
+            // btn_otrm_kapat
+            // 
+            btn_otrm_kapat.Location = new Point(1167, 206);
+            btn_otrm_kapat.Name = "btn_otrm_kapat";
+            btn_otrm_kapat.Size = new Size(125, 29);
+            btn_otrm_kapat.TabIndex = 9;
+            btn_otrm_kapat.Text = "oturmu kapat";
+            btn_otrm_kapat.UseVisualStyleBackColor = true;
+            btn_otrm_kapat.Click += btn_otrm_kapat_Click;
             // 
             // lbl_profil
             // 
@@ -278,6 +288,7 @@
             btn_ogrencikulupleri.TabIndex = 6;
             btn_ogrencikulupleri.Text = "Öğrenci Kulüpleri";
             btn_ogrencikulupleri.UseVisualStyleBackColor = false;
+            btn_ogrencikulupleri.Click += btn_ogrencikulupleri_Click;
             // 
             // btn_ak
             // 
@@ -309,16 +320,6 @@
             btn_oibs.Text = "Öğrenci İşleri Bilgi Sistemi";
             btn_oibs.UseVisualStyleBackColor = false;
             // 
-            // btn_ebs
-            // 
-            btn_ebs.BackColor = Color.Beige;
-            btn_ebs.Location = new Point(32, 261);
-            btn_ebs.Name = "btn_ebs";
-            btn_ebs.Size = new Size(194, 95);
-            btn_ebs.TabIndex = 2;
-            btn_ebs.Text = "Erasmus Bilgi Sistemi";
-            btn_ebs.UseVisualStyleBackColor = false;
-            // 
             // btn_eds
             // 
             btn_eds.BackColor = Color.Beige;
@@ -340,15 +341,15 @@
             btn_obs.UseVisualStyleBackColor = false;
             btn_obs.Click += button1_Click;
             // 
-            // btn_otrm_kapat
+            // btn_ebs
             // 
-            btn_otrm_kapat.Location = new Point(1167, 206);
-            btn_otrm_kapat.Name = "btn_otrm_kapat";
-            btn_otrm_kapat.Size = new Size(125, 29);
-            btn_otrm_kapat.TabIndex = 9;
-            btn_otrm_kapat.Text = "oturmu kapat";
-            btn_otrm_kapat.UseVisualStyleBackColor = true;
-            btn_otrm_kapat.Click += btn_otrm_kapat_Click;
+            btn_ebs.BackColor = Color.Beige;
+            btn_ebs.Location = new Point(32, 261);
+            btn_ebs.Name = "btn_ebs";
+            btn_ebs.Size = new Size(194, 95);
+            btn_ebs.TabIndex = 2;
+            btn_ebs.Text = "Erasmus Bilgi Sistemi";
+            btn_ebs.UseVisualStyleBackColor = false;
             // 
             // Ana_sayfa
             // 
@@ -381,7 +382,6 @@
         private Button btn_obs;
         private Button btn_dpvm;
         private Button btn_oibs;
-        private Button btn_ebs;
         private Button btn_eds;
         private Button btn_kariyermerkezi;
         private Button btn_msj;
@@ -396,5 +396,6 @@
         private Label lbl_profil;
         private Button btn_profil;
         private Button btn_otrm_kapat;
+        private Button btn_ebs;
     }
 }

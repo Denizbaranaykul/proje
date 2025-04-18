@@ -95,8 +95,13 @@ namespace proje
 
         private void btn_otrm_kapat_Click(object sender, EventArgs e)
         {
-          anaSayfaForm.Hide();
+            anaSayfaForm.Hide();
             Giris.girisFormu.Show();
+        }
+
+        private void btn_ogrencikulupleri_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
