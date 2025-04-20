@@ -10,7 +10,7 @@ namespace proje
     {
         public static Ana_sayfa anaSayfaForm;
         public static Giris girisFormu;
-        public MySqlConnection conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
+        public MySqlConnection conn = new MySqlConnection("Server=192.168.80.27;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;
         public MySqlDataAdapter adapter;
         public DataTable dt;
@@ -99,6 +99,7 @@ namespace proje
                 {
                     MessageBox.Show("Kullanýcý adý veya þifre yanlýþ");
                 }
+                
             }
             catch (MySqlException ex)
             {
