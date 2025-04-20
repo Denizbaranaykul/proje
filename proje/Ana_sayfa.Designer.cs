@@ -52,9 +52,9 @@
             btn_ak = new Button();
             btn_dpvm = new Button();
             btn_oibs = new Button();
+            btn_ebs = new Button();
             btn_eds = new Button();
             btn_obs = new Button();
-            btn_ebs = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -120,7 +120,7 @@
             // 
             // btn_profil
             // 
-            btn_profil.Location = new Point(1167, 163);
+            btn_profil.Location = new Point(1167, 167);
             btn_profil.Name = "btn_profil";
             btn_profil.Size = new Size(125, 33);
             btn_profil.TabIndex = 7;
@@ -320,6 +320,16 @@
             btn_oibs.Text = "Öğrenci İşleri Bilgi Sistemi";
             btn_oibs.UseVisualStyleBackColor = false;
             // 
+            // btn_ebs
+            // 
+            btn_ebs.BackColor = Color.Beige;
+            btn_ebs.Location = new Point(32, 261);
+            btn_ebs.Name = "btn_ebs";
+            btn_ebs.Size = new Size(194, 95);
+            btn_ebs.TabIndex = 2;
+            btn_ebs.Text = "Erasmus Bilgi Sistemi";
+            btn_ebs.UseVisualStyleBackColor = false;
+            // 
             // btn_eds
             // 
             btn_eds.BackColor = Color.Beige;
@@ -340,16 +350,6 @@
             btn_obs.Text = "Öğrenci Bilgi Sistemi";
             btn_obs.UseVisualStyleBackColor = false;
             btn_obs.Click += button1_Click;
-            // 
-            // btn_ebs
-            // 
-            btn_ebs.BackColor = Color.Beige;
-            btn_ebs.Location = new Point(32, 261);
-            btn_ebs.Name = "btn_ebs";
-            btn_ebs.Size = new Size(194, 95);
-            btn_ebs.TabIndex = 2;
-            btn_ebs.Text = "Erasmus Bilgi Sistemi";
-            btn_ebs.UseVisualStyleBackColor = false;
             // 
             // Ana_sayfa
             // 
