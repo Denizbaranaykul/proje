@@ -103,5 +103,11 @@ namespace proje
         {
 
         }
+
+        private void btn_ulasim_Click(object sender, EventArgs e)
+        {
+            kampusUlas ULAS = new kampusUlas();
+            ULAS.Show();
+        }
     }
 }

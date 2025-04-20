@@ -217,6 +217,7 @@
             btn_ulasim.TabIndex = 13;
             btn_ulasim.Text = "Kampüse Ulaşım";
             btn_ulasim.UseVisualStyleBackColor = false;
+            btn_ulasim.Click += btn_ulasim_Click;
             // 
             // btn_harita
             // 
