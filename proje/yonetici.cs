@@ -15,11 +15,11 @@ namespace proje
         public yonetici()
         {
             InitializeComponent();
-            if(taban==0)
+            if (taban == 0)
             {
                 lbl_profil.Text = Convert.ToString(GlobalDatabase.Dt.Rows[0]["isim"]) + " " + GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
             }
-            
+
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
@@ -33,12 +33,12 @@ namespace proje
             profil.Show();
         }
 
-       private void btn_ogrenci_ekle_Click(object sender, EventArgs e)
+        private void btn_ogrenci_ekle_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"])==9|| Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 3 || Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 6)
+            if (Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 9 || Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 3 || Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["yetki"]) == 6)
             {
-            ogrenci_kaydet ogrenci_Kaydet = new ogrenci_kaydet();
-            ogrenci_Kaydet.Show();
+                ogrenci_kaydet ogrenci_Kaydet = new ogrenci_kaydet();
+                ogrenci_Kaydet.Show();
             }
             else
             {
@@ -60,6 +60,17 @@ namespace proje
             {
                 MessageBox.Show("bu özelliği kullanma yetkiniz yoktur");
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            yonetici_kütüphane kutup = new yonetici_kütüphane();
+            kutup.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

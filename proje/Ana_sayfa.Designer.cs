@@ -258,6 +258,7 @@
             btn_kütüpanesistemi.TabIndex = 9;
             btn_kütüpanesistemi.Text = "Kütüphane Sistemi";
             btn_kütüpanesistemi.UseVisualStyleBackColor = false;
+            btn_kütüpanesistemi.Click += btn_kütüpanesistemi_Click;
             // 
             // btn_kariyermerkezi
             // 

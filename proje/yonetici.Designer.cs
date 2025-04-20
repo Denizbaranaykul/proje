@@ -160,6 +160,7 @@
             button8.TabIndex = 7;
             button8.Text = "yemekhane listesi ekleme";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -187,6 +188,7 @@
             button5.TabIndex = 4;
             button5.Text = "kütüphaneye kitap ekleme";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 

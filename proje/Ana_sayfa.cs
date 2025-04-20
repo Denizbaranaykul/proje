@@ -109,5 +109,11 @@ namespace proje
             kampusUlas ULAS = new kampusUlas();
             ULAS.Show();
         }
+
+        private void btn_kütüpanesistemi_Click(object sender, EventArgs e)
+        {
+            kutuphane_form kutuphane = new kutuphane_form();
+            kutuphane.Show();
+        }
     }
 }
