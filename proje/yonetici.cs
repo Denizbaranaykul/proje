@@ -15,6 +15,7 @@ namespace proje
         public yonetici()
         {
             InitializeComponent();
+            lbl_profil.Text= Convert.ToString(GlobalDatabase.Dt.Rows[0]["isim"])+" "+ GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
         }
 
         private void Close_btn_Click(object sender, EventArgs e)
@@ -35,9 +36,13 @@ namespace proje
             ogrenci_kaydet ogrenci_Kaydet = new ogrenci_kaydet();
             ogrenci_Kaydet.Show();
             }
-          
-            
-            
+            else
+            {
+                MessageBox.Show("bu özelliği kullanma yetkiniz yoktur");
+            }
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)

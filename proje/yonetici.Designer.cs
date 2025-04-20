@@ -122,7 +122,7 @@
             button12.Name = "button12";
             button12.Size = new Size(190, 90);
             button12.TabIndex = 11;
-            button12.Text = "kariyer destek sistemine ekleme";
+            button12.Text = "şikayet kutusu";
             button12.UseVisualStyleBackColor = true;
             // 
             // button11
@@ -194,7 +194,7 @@
             button4.Name = "button4";
             button4.Size = new Size(218, 90);
             button4.TabIndex = 3;
-            button4.Text = "kütüphaneye kitap ekleme";
+            button4.Text = "topluluk başkanı toplıu mesaj";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -224,7 +224,7 @@
             btn_ogrenci_ekle.TabIndex = 0;
             btn_ogrenci_ekle.Text = "öğrenci ekleme";
             btn_ogrenci_ekle.UseVisualStyleBackColor = true;
-            btn_ogrenci_ekle.Click += this.btn_ogrenci_ekle_Click;
+            btn_ogrenci_ekle.Click += btn_ogrenci_ekle_Click;
             // 
             // panel2
             // 

@@ -33,7 +33,7 @@ namespace proje
                 int i = 1;
                 while (reader.Read())
                 {
-                    string fullName = i+"-"+$"{reader["isim"]} {reader["soy_isim"]}";
+                    string fullName = i + "-" + $"{reader["isim"]} {reader["soy_isim"]}";
                     i++;
                     int id = Convert.ToInt32(reader["id"]);
 
@@ -60,9 +60,9 @@ namespace proje
             cmd.Parameters.AddWithValue("@pozisyon", comboBox1.Text);
             cmd.Parameters.AddWithValue("@yetki", comboBox2.Text);
             cmd.Parameters.AddWithValue("@email", email_textbox.Text);
-            cmd.Parameters.AddWithValue("@sifre",sifre_textbox.Text);
+            cmd.Parameters.AddWithValue("@sifre", sifre_textbox.Text);
             cmd.ExecuteNonQuery();
-            GlobalDatabase.Conn.Close() ;
+            GlobalDatabase.Conn.Close();
             MessageBox.Show("başarı ile kaydedildi");
         }
 
@@ -114,5 +114,9 @@ namespace proje
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
