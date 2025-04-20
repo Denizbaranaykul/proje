@@ -15,7 +15,11 @@ namespace proje
         public yonetici()
         {
             InitializeComponent();
-            lbl_profil.Text= Convert.ToString(GlobalDatabase.Dt.Rows[0]["isim"])+" "+ GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
+            if(taban==0)
+            {
+                lbl_profil.Text = Convert.ToString(GlobalDatabase.Dt.Rows[0]["isim"]) + " " + GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();
+            }
+            
         }
 
         private void Close_btn_Click(object sender, EventArgs e)

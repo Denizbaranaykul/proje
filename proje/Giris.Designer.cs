@@ -38,6 +38,7 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -98,12 +99,12 @@
             // 
             // button2
             // 
-            button2.Location = new Point(479, 344);
+            button2.Location = new Point(474, 353);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(111, 85);
             button2.TabIndex = 6;
-            button2.Text = "geliştirici girişi";
+            button2.Text = "geliştirici girişi(öğrenci)";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -139,11 +140,23 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(35, 353);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(111, 85);
+            button4.TabIndex = 10;
+            button4.Text = "geliştirici girişi (yönetici)";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(621, 522);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
@@ -173,5 +186,6 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private Button button3;
+        private Button button4;
     }
 }

@@ -99,7 +99,7 @@ namespace proje
                 {
                     MessageBox.Show("Kullanýcý adý veya þifre yanlýþ");
                 }
-                
+
             }
             catch (MySqlException ex)
             {
@@ -206,6 +206,13 @@ namespace proje
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            taban = 10;
+            yonetici yon= new yonetici();
+            this.Hide();
+            yon.Show();
+        }
     }
 
 }
