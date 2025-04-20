@@ -21,14 +21,17 @@ namespace proje
         {
             InitializeComponent();
             radioButton1.Checked = true;
-
+            
+            
 
         }
         static int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
+
         private void KisiListesiniYukle(string query)
         {
             try
             {
+                
 
                 GlobalDatabase.Conn.Open();
 

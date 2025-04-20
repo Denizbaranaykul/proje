@@ -50,13 +50,13 @@ namespace proje
             }
             GlobalDatabase.Conn.Close();
         }
-        public int ogren= Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
+         public int ogren = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
         public Obs()
         {
             InitializeComponent();
             if (Giris.taban == 0)//geliştirici girişi mi diye kontrrol
             {
-
+                
 
                 lbl_bolum.Text = GlobalDatabase.Dt.Rows[0]["bolum"].ToString();//bölüm kısmını data base den çekme
                 string query = "SELECT ders FROM dersler";//dersleri yazdırmak için sql komutu
