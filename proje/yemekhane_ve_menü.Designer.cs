@@ -35,15 +35,21 @@
             comboBox1 = new ComboBox();
             lbl_tarih = new Label();
             panel1 = new Panel();
+            button2 = new Button();
+            button1 = new Button();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            label3 = new Label();
+            label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
+            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // lbl_saat
@@ -88,6 +94,62 @@
             panel1.Size = new Size(387, 353);
             panel1.TabIndex = 3;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 8F);
+            button2.Location = new Point(206, 264);
+            button2.Name = "button2";
+            button2.Size = new Size(153, 48);
+            button2.TabIndex = 5;
+            button2.Text = "akşam rezervasyonu ekle";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 8F);
+            button1.Location = new Point(28, 264);
+            button1.Name = "button1";
+            button1.Size = new Size(153, 48);
+            button1.TabIndex = 4;
+            button1.Text = "öğlen rezervasyonu ekle";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(dataGridView2);
+            panel3.Location = new Point(206, 82);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(153, 130);
+            panel3.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(28, 82);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(153, 130);
+            panel2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(222, 30);
+            label3.Name = "label3";
+            label3.Size = new Size(106, 20);
+            label3.TabIndex = 1;
+            label3.Text = "akşam menüsü";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(51, 30);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 20);
+            label2.TabIndex = 0;
+            label2.Text = "öğlen menüsü";
+            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Location = new Point(27, 206);
@@ -106,57 +168,23 @@
             label1.TabIndex = 6;
             label1.Text = "konum seç";
             // 
-            // label2
+            // dataGridView1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(51, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(102, 20);
-            label2.TabIndex = 0;
-            label2.Text = "öğlen menüsü";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(147, 127);
+            dataGridView1.TabIndex = 0;
             // 
-            // label3
+            // dataGridView2
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(222, 30);
-            label3.Name = "label3";
-            label3.Size = new Size(106, 20);
-            label3.TabIndex = 1;
-            label3.Text = "akşam menüsü";
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(28, 82);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(153, 130);
-            panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(206, 82);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(153, 130);
-            panel3.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 8F);
-            button1.Location = new Point(28, 264);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 48);
-            button1.TabIndex = 4;
-            button1.Text = "öğlen rezervasyonu ekle";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 8F);
-            button2.Location = new Point(206, 264);
-            button2.Name = "button2";
-            button2.Size = new Size(153, 48);
-            button2.TabIndex = 5;
-            button2.Text = "akşam rezervasyonu ekle";
-            button2.UseVisualStyleBackColor = true;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(3, 2);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(147, 127);
+            dataGridView2.TabIndex = 1;
             // 
             // yemekhane_ve_menü
             // 
@@ -174,6 +202,10 @@
             Load += yemekhane_ve_menü_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,5 +226,7 @@
         private Panel panel3;
         private Panel panel2;
         private Label label3;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
     }
 }

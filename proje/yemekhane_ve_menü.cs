@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
+using static proje.Giris;
 namespace proje
 {
     public partial class yemekhane_ve_menü : Form
@@ -16,7 +17,12 @@ namespace proje
         public yemekhane_ve_menü()
         {
             InitializeComponent();
-            
+
+
+        }
+        private void oglen_listele()
+        {
+
         }
 
         // Form yüklenince timer başlasın
@@ -53,6 +59,30 @@ namespace proje
             // DateTimePicker ayarı
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rezerve("öğlen");
+        }
+        private void rezerve(string saat)
+        {
+            GlobalDatabase.Conn.Open();
+            string query = "INSERT INTO rezervasyon (yer,tarih,saat,ogrenci_id) VALUES(@yer,@tarih,@saat,@id)";
+            MySqlCommand cmd = new MySqlCommand(query,GlobalDatabase.Conn);
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@yer", comboBox1.Text);
+            cmd.Parameters.AddWithValue("@tarih", dateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@saat", saat);
+            cmd.Parameters.AddWithValue("@id", GlobalDatabase.Dt.Rows[0]["id"]);
+            cmd.ExecuteNonQuery();
+            GlobalDatabase.Conn.Close();
+            MessageBox.Show("başarı ile : " + dateTimePicker1.Value + " tarihli rezervasyonunuz oluşturulmuştur");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rezerve("akşam");
         }
     }
 }
