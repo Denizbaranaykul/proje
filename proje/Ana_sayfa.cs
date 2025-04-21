@@ -115,5 +115,18 @@ namespace proje
             kutuphane_form kutuphane = new kutuphane_form();
             kutuphane.Show();
         }
+
+        private void btn_ak_Click(object sender, EventArgs e)
+        {
+            akademik_kadro akademik = new akademik_kadro();
+            akademik.Show();
+        }
+
+        private void btn_yvmb_Click(object sender, EventArgs e)
+        {
+            yemekhane_ve_menü yemek = new yemekhane_ve_menü();
+            yemek.Show();
+        }
+
     }
 }

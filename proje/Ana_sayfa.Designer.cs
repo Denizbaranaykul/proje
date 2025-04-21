@@ -238,6 +238,7 @@
             btn_yvmb.TabIndex = 11;
             btn_yvmb.Text = "Yemekhane Ve Menü Bilgisi";
             btn_yvmb.UseVisualStyleBackColor = false;
+            btn_yvmb.Click += btn_yvmb_Click;
             // 
             // btn_genelduyurular
             // 
@@ -301,6 +302,7 @@
             btn_ak.TabIndex = 5;
             btn_ak.Text = "Akademik Kadro";
             btn_ak.UseVisualStyleBackColor = false;
+            btn_ak.Click += btn_ak_Click;
             // 
             // btn_dpvm
             // 
