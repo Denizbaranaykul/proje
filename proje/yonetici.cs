@@ -70,7 +70,8 @@ namespace proje
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            yemekhane_yon yemekhane = new yemekhane_yon();
+            yemekhane.Show();
         }
     }
 }

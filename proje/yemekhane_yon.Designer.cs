@@ -44,8 +44,13 @@
             button1 = new Button();
             label7 = new Label();
             panel1 = new Panel();
+            label8 = new Label();
+            dataGridView2 = new DataGridView();
+            maskedTextBox1 = new MaskedTextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -152,7 +157,7 @@
             dataGridView1.Location = new Point(43, 73);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(358, 484);
+            dataGridView1.Size = new Size(358, 167);
             dataGridView1.TabIndex = 12;
             // 
             // button1
@@ -178,12 +183,54 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(maskedTextBox1);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(dataGridView2);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(dataGridView1);
             panel1.Location = new Point(366, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(432, 610);
             panel1.TabIndex = 15;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 18F);
+            label8.Location = new Point(22, 256);
+            label8.Name = "label8";
+            label8.Size = new Size(407, 41);
+            label8.TabIndex = 16;
+            label8.Text = "seçilen günün rezervasyonları";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(43, 391);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(358, 190);
+            dataGridView2.TabIndex = 15;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(97, 312);
+            maskedTextBox1.Mask = "00000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(236, 27);
+            maskedTextBox1.TabIndex = 17;
+            maskedTextBox1.ValidatingType = typeof(int);
+            // 
+            // button2
+            // 
+            button2.Location = new Point(165, 356);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 18;
+            button2.Text = "arama";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // yemekhane_yon
             // 
@@ -209,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -231,5 +279,9 @@
         private Button button1;
         private Label label7;
         private Panel panel1;
+        private Label label8;
+        private DataGridView dataGridView2;
+        private Button button2;
+        private MaskedTextBox maskedTextBox1;
     }
 }

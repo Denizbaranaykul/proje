@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static proje.Giris;
 namespace proje
 {
@@ -17,13 +18,11 @@ namespace proje
         public yemekhane_ve_menü()
         {
             InitializeComponent();
-
-
-        }
-        private void oglen_listele()
-        {
+            yemek_yazdir("öğlen",1);
+            yemek_yazdir("akşam", 0);
 
         }
+       
 
         // Form yüklenince timer başlasın
         private void yemekhane_ve_menü_Load(object sender, EventArgs e)
@@ -59,6 +58,25 @@ namespace proje
             // DateTimePicker ayarı
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm";
+        }
+        private void yemek_yazdir(string saat,int i)
+        {
+            string query = "SELECT yemek1,yemek2,yemek3,yemek4 FROM yemek_listesi WHERE tarih = @tarih and saati=@saat";
+            MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
+            cmd.Parameters.AddWithValue("@tarih",DateTime.Now.AddDays(1).Date);
+            cmd.Parameters.AddWithValue("@saat", saat);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(i==1)
+            {
+                dataGridView1.DataSource = dt;
+            }
+            else
+            {
+                dataGridView2.DataSource = dt;
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
