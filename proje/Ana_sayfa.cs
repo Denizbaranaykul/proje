@@ -101,7 +101,8 @@ namespace proje
 
         private void btn_ogrencikulupleri_Click(object sender, EventArgs e)
         {
-
+            kulup kulup = new kulup();
+            kulup.Show();
         }
 
         private void btn_ulasim_Click(object sender, EventArgs e)
@@ -128,5 +129,11 @@ namespace proje
             yemek.Show();
         }
 
+        private void btn_makale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

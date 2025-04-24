@@ -21,17 +21,17 @@ namespace proje
         {
             InitializeComponent();
             radioButton1.Checked = true;
-            
-            
+
+
 
         }
         static int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
 
-        private void KisiListesiniYukle(string query)
+        public static void KisiListesiniYukle(ComboBox comboBox, string query)
         {
             try
             {
-                
+
 
                 GlobalDatabase.Conn.Open();
 
@@ -41,7 +41,7 @@ namespace proje
 
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader["isim"].ToString() + " " + reader["soy_isim"].ToString());
+                    comboBox.Items.Add(reader["isim"].ToString() + " " + reader["soy_isim"].ToString());
 
                 }
 
@@ -61,7 +61,7 @@ namespace proje
             {
                 string sorgu = "";
                 string sorgu2;
-                
+
                 GlobalDatabase.Conn.Open();
 
                 if (radioButton1.Checked)
@@ -122,13 +122,13 @@ namespace proje
             if (radioButton1.Checked)
             {
                 query = "SELECT isim,soy_isim FROM ogrenci_bilgi";
-                KisiListesiniYukle(query);
+                KisiListesiniYukle(comboBox1, query);
 
             }
             else if (radioButton2.Checked)
             {
                 query = "SELECT isim,soy_isim FROM yonetici_bilgi";
-                KisiListesiniYukle(query);
+                KisiListesiniYukle(comboBox1, query);
             }
         }
 
@@ -158,7 +158,7 @@ namespace proje
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource = dt; 
+            dataGridView1.DataSource = dt;
             dataGridView1.Columns["mesaj_metni"].Width = 300;
             dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
