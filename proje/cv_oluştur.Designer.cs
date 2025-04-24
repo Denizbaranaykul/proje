@@ -359,7 +359,7 @@ namespace proje
             btncv_kaydet.TabIndex = 3;
             btncv_kaydet.Text = "cv yi pdf olarak kaydet";
             btncv_kaydet.UseVisualStyleBackColor = true;
-            btncv_kaydet.Click += btncv_kaydet_Click;
+            btncv_kaydet.Click += Btncv_kaydet;
             // 
             // cv_oluştur
             // 
@@ -379,7 +379,7 @@ namespace proje
 
         private void btncv_kaydet_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         //private void btncv_kaydet_Click(object sender, EventArgs e)
