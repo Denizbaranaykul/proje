@@ -134,6 +134,10 @@ namespace proje
 
         }
 
-        
+        private void btn_kariyermerkezi_Click(object sender, EventArgs e)
+        {
+            kariyer_merkezi kariyer = new kariyer_merkezi();
+            kariyer.Show();
+        }
     }
 }

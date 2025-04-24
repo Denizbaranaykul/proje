@@ -270,6 +270,7 @@
             btn_kariyermerkezi.TabIndex = 8;
             btn_kariyermerkezi.Text = "Kariyer Merkezi";
             btn_kariyermerkezi.UseVisualStyleBackColor = false;
+            btn_kariyermerkezi.Click += btn_kariyermerkezi_Click;
             // 
             // btn_msj
             // 
