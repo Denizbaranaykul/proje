@@ -1,4 +1,6 @@
-﻿namespace proje
+﻿
+
+namespace proje
 {
     partial class cv_oluştur
     {
@@ -29,28 +31,28 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            richTextBox8 = new RichTextBox();
-            richTextBox7 = new RichTextBox();
+            txt_referanslar = new RichTextBox();
+            txt_sertifikalar = new RichTextBox();
             label12 = new Label();
             label11 = new Label();
-            richTextBox6 = new RichTextBox();
-            richTextBox5 = new RichTextBox();
+            txt_egitim = new RichTextBox();
+            txt_iş_deneyimi = new RichTextBox();
             label10 = new Label();
             label9 = new Label();
-            richTextBox4 = new RichTextBox();
-            richTextBox3 = new RichTextBox();
+            txt_diller = new RichTextBox();
+            txt_beceriler = new RichTextBox();
             label8 = new Label();
             label7 = new Label();
-            richTextBox2 = new RichTextBox();
+            txt_hakkımda = new RichTextBox();
             label6 = new Label();
-            richTextBox1 = new RichTextBox();
+            txt_adres = new RichTextBox();
             label5 = new Label();
-            textBox3 = new TextBox();
+            txte_posta = new TextBox();
             label4 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            txt_tel = new MaskedTextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txt_soyad = new TextBox();
+            txt_ad = new TextBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -63,28 +65,28 @@
             // panel1
             // 
             panel1.BackColor = Color.FloralWhite;
-            panel1.Controls.Add(richTextBox8);
-            panel1.Controls.Add(richTextBox7);
+            panel1.Controls.Add(txt_referanslar);
+            panel1.Controls.Add(txt_sertifikalar);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label11);
-            panel1.Controls.Add(richTextBox6);
-            panel1.Controls.Add(richTextBox5);
+            panel1.Controls.Add(txt_egitim);
+            panel1.Controls.Add(txt_iş_deneyimi);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(richTextBox4);
-            panel1.Controls.Add(richTextBox3);
+            panel1.Controls.Add(txt_diller);
+            panel1.Controls.Add(txt_beceriler);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(richTextBox2);
+            panel1.Controls.Add(txt_hakkımda);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(richTextBox1);
+            panel1.Controls.Add(txt_adres);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txte_posta);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(maskedTextBox1);
+            panel1.Controls.Add(txt_tel);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txt_soyad);
+            panel1.Controls.Add(txt_ad);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
@@ -93,21 +95,21 @@
             panel1.Size = new Size(1053, 1054);
             panel1.TabIndex = 0;
             // 
-            // richTextBox8
+            // txt_referanslar
             // 
-            richTextBox8.Location = new Point(542, 847);
-            richTextBox8.Name = "richTextBox8";
-            richTextBox8.Size = new Size(352, 140);
-            richTextBox8.TabIndex = 24;
-            richTextBox8.Text = "";
+            txt_referanslar.Location = new Point(542, 847);
+            txt_referanslar.Name = "txt_referanslar";
+            txt_referanslar.Size = new Size(352, 140);
+            txt_referanslar.TabIndex = 24;
+            txt_referanslar.Text = "";
             // 
-            // richTextBox7
+            // txt_sertifikalar
             // 
-            richTextBox7.Location = new Point(542, 566);
-            richTextBox7.Name = "richTextBox7";
-            richTextBox7.Size = new Size(352, 140);
-            richTextBox7.TabIndex = 23;
-            richTextBox7.Text = "";
+            txt_sertifikalar.Location = new Point(542, 566);
+            txt_sertifikalar.Name = "txt_sertifikalar";
+            txt_sertifikalar.Size = new Size(352, 140);
+            txt_sertifikalar.TabIndex = 23;
+            txt_sertifikalar.Text = "";
             // 
             // label12
             // 
@@ -133,21 +135,21 @@
             label11.TabIndex = 21;
             label11.Text = "SERTİFİKALAR";
             // 
-            // richTextBox6
+            // txt_egitim
             // 
-            richTextBox6.Location = new Point(542, 345);
-            richTextBox6.Name = "richTextBox6";
-            richTextBox6.Size = new Size(352, 140);
-            richTextBox6.TabIndex = 20;
-            richTextBox6.Text = "";
+            txt_egitim.Location = new Point(542, 345);
+            txt_egitim.Name = "txt_egitim";
+            txt_egitim.Size = new Size(352, 140);
+            txt_egitim.TabIndex = 20;
+            txt_egitim.Text = "";
             // 
-            // richTextBox5
+            // txt_iş_deneyimi
             // 
-            richTextBox5.Location = new Point(542, 123);
-            richTextBox5.Name = "richTextBox5";
-            richTextBox5.Size = new Size(352, 136);
-            richTextBox5.TabIndex = 19;
-            richTextBox5.Text = "";
+            txt_iş_deneyimi.Location = new Point(542, 123);
+            txt_iş_deneyimi.Name = "txt_iş_deneyimi";
+            txt_iş_deneyimi.Size = new Size(352, 136);
+            txt_iş_deneyimi.TabIndex = 19;
+            txt_iş_deneyimi.Text = "";
             // 
             // label10
             // 
@@ -173,21 +175,21 @@
             label9.TabIndex = 17;
             label9.Text = "İŞ DENEYİMİ";
             // 
-            // richTextBox4
+            // txt_diller
             // 
-            richTextBox4.Location = new Point(99, 896);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(173, 60);
-            richTextBox4.TabIndex = 16;
-            richTextBox4.Text = "";
+            txt_diller.Location = new Point(99, 896);
+            txt_diller.Name = "txt_diller";
+            txt_diller.Size = new Size(173, 60);
+            txt_diller.TabIndex = 16;
+            txt_diller.Text = "";
             // 
-            // richTextBox3
+            // txt_beceriler
             // 
-            richTextBox3.Location = new Point(104, 761);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(173, 61);
-            richTextBox3.TabIndex = 15;
-            richTextBox3.Text = "";
+            txt_beceriler.Location = new Point(104, 761);
+            txt_beceriler.Name = "txt_beceriler";
+            txt_beceriler.Size = new Size(173, 61);
+            txt_beceriler.TabIndex = 15;
+            txt_beceriler.Text = "";
             // 
             // label8
             // 
@@ -213,13 +215,13 @@
             label7.TabIndex = 13;
             label7.Text = "BECERİLER";
             // 
-            // richTextBox2
+            // txt_hakkımda
             // 
-            richTextBox2.Location = new Point(104, 646);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(173, 60);
-            richTextBox2.TabIndex = 12;
-            richTextBox2.Text = "";
+            txt_hakkımda.Location = new Point(104, 646);
+            txt_hakkımda.Name = "txt_hakkımda";
+            txt_hakkımda.Size = new Size(173, 60);
+            txt_hakkımda.TabIndex = 12;
+            txt_hakkımda.Text = "";
             // 
             // label6
             // 
@@ -233,13 +235,13 @@
             label6.TabIndex = 11;
             label6.Text = "HAKKIMDA";
             // 
-            // richTextBox1
+            // txt_adres
             // 
-            richTextBox1.Location = new Point(104, 543);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(173, 60);
-            richTextBox1.TabIndex = 10;
-            richTextBox1.Text = "";
+            txt_adres.Location = new Point(104, 543);
+            txt_adres.Name = "txt_adres";
+            txt_adres.Size = new Size(173, 60);
+            txt_adres.TabIndex = 10;
+            txt_adres.Text = "";
             // 
             // label5
             // 
@@ -253,12 +255,12 @@
             label5.TabIndex = 9;
             label5.Text = "ADRES";
             // 
-            // textBox3
+            // txte_posta
             // 
-            textBox3.Location = new Point(99, 458);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(198, 27);
-            textBox3.TabIndex = 8;
+            txte_posta.Location = new Point(99, 458);
+            txte_posta.Name = "txte_posta";
+            txte_posta.Size = new Size(198, 27);
+            txte_posta.TabIndex = 8;
             // 
             // label4
             // 
@@ -272,13 +274,13 @@
             label4.TabIndex = 7;
             label4.Text = "E POSTA";
             // 
-            // maskedTextBox1
+            // txt_tel
             // 
-            maskedTextBox1.Location = new Point(99, 372);
-            maskedTextBox1.Mask = "(999) 000 0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(125, 27);
-            maskedTextBox1.TabIndex = 6;
+            txt_tel.Location = new Point(99, 372);
+            txt_tel.Mask = "(999) 000 0000";
+            txt_tel.Name = "txt_tel";
+            txt_tel.Size = new Size(125, 27);
+            txt_tel.TabIndex = 6;
             // 
             // label3
             // 
@@ -292,19 +294,19 @@
             label3.TabIndex = 5;
             label3.Text = "TELEFON";
             // 
-            // textBox2
+            // txt_soyad
             // 
-            textBox2.Location = new Point(99, 302);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(198, 27);
-            textBox2.TabIndex = 4;
+            txt_soyad.Location = new Point(99, 302);
+            txt_soyad.Name = "txt_soyad";
+            txt_soyad.Size = new Size(198, 27);
+            txt_soyad.TabIndex = 4;
             // 
-            // textBox1
+            // txt_ad
             // 
-            textBox1.Location = new Point(99, 232);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(198, 27);
-            textBox1.TabIndex = 3;
+            txt_ad.Location = new Point(99, 232);
+            txt_ad.Name = "txt_ad";
+            txt_ad.Size = new Size(198, 27);
+            txt_ad.TabIndex = 3;
             // 
             // label2
             // 
@@ -375,6 +377,16 @@
             ResumeLayout(false);
         }
 
+        private void btncv_kaydet_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        //private void btncv_kaydet_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         #endregion
 
         private Panel panel1;
@@ -382,29 +394,29 @@
         private Button btnfoto_yükle;
         private Button button1;
         private Label label4;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txt_tel;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txt_soyad;
+        private TextBox txt_ad;
         private Label label2;
         private Button btncv_kaydet;
-        private RichTextBox richTextBox8;
-        private RichTextBox richTextBox7;
+        private RichTextBox txt_referanslar;
+        private RichTextBox txt_sertifikalar;
         private Label label12;
         private Label label11;
-        private RichTextBox richTextBox6;
-        private RichTextBox richTextBox5;
+        private RichTextBox txt_egitim;
+        private RichTextBox txt_iş_deneyimi;
         private Label label10;
         private Label label9;
-        private RichTextBox richTextBox4;
-        private RichTextBox richTextBox3;
+        private RichTextBox txt_diller;
+        private RichTextBox txt_beceriler;
         private Label label8;
         private Label label7;
-        private RichTextBox richTextBox2;
+        private RichTextBox txt_hakkımda;
         private Label label6;
-        private RichTextBox richTextBox1;
+        private RichTextBox txt_adres;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox txte_posta;
         private Label label1;
     }
 }
