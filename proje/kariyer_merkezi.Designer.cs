@@ -33,12 +33,14 @@
             // 
             // button1
             // 
-            button1.Location = new Point(82, 92);
+            button1.BackColor = SystemColors.MenuHighlight;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(55, 166);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(133, 61);
             button1.TabIndex = 0;
             button1.Text = "cv oluştur";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // kariyer_merkezi

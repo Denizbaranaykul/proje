@@ -19,7 +19,7 @@ namespace proje
         public cv_oluştur()
         {
             InitializeComponent();
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); 
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
         private void btnfoto_yükle_Click(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace proje
 
                 if (saveFileDialog.ShowDialog() != DialogResult.OK)
                 {
-                    return; 
+                    return;
                 }
 
                 string pdfPath = saveFileDialog.FileName;
@@ -60,7 +60,7 @@ namespace proje
                     MessageBox.Show("Geçersiz dosya yolu.");
                     return;
                 }
-              
+
                 Bitmap panelBitmap = new Bitmap(panel1.Width, panel1.Height);
                 panel1.DrawToBitmap(panelBitmap, new System.Drawing.Rectangle(0, 0, panel1.Width, panel1.Height));
 
@@ -89,6 +89,11 @@ namespace proje
             {
                 MessageBox.Show("PDF kaydedilirken bir hata oluştu: " + ex.Message);
             }
+        }
+
+        private void txt_beceriler_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
