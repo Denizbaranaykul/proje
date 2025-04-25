@@ -19,7 +19,7 @@ namespace proje
         {
             InitializeComponent();
             string query = "SELECT isim,soy_isim FROM yonetici_bilgi";
-            KisiListesiniYukle(comboBox1, query);
+            KisiListesiniYukle(comboBox1, query, "isim", "soy_isim"," ");
             OnayliTopluluklariListele();
         }
 

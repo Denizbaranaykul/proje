@@ -32,28 +32,27 @@
             comboBox1 = new ComboBox();
             button2 = new Button();
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button3 = new Button();
-            label4 = new Label();
-            panel2 = new Panel();
-            label5 = new Label();
-            panel3 = new Panel();
-            label6 = new Label();
             panel4 = new Panel();
             label7 = new Label();
+            panel3 = new Panel();
+            label6 = new Label();
+            panel2 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = SystemColors.MenuHighlight;
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(302, 528);
+            button1.Location = new Point(257, 516);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(116, 46);
@@ -69,18 +68,20 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(190, 23);
             comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button2
             // 
             button2.BackColor = SystemColors.MenuHighlight;
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(36, 528);
+            button2.Location = new Point(67, 516);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(116, 46);
             button2.TabIndex = 5;
             button2.Text = "başvur";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // panel1
             // 
@@ -89,7 +90,6 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button2);
@@ -100,94 +100,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(470, 592);
             panel1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(36, 89);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 28);
-            label1.TabIndex = 5;
-            label1.Text = "şirket ismi";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15F);
-            label2.Location = new Point(36, 163);
-            label2.Name = "label2";
-            label2.Size = new Size(131, 28);
-            label2.TabIndex = 6;
-            label2.Text = "Gereksinimler";
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(36, 287);
-            label3.Name = "label3";
-            label3.Size = new Size(288, 28);
-            label3.TabIndex = 7;
-            label3.Text = "İlan İle Alakalı Teknik Beklentiler (Aranan nitelikler, yetkinlikler vs.)";
-            // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.MenuHighlight;
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(170, 528);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(116, 46);
-            button3.TabIndex = 8;
-            button3.Text = "cv yükle";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(124, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(102, 28);
-            label4.TabIndex = 9;
-            label4.Text = "İlan seçimi";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.Window;
-            panel2.Controls.Add(label5);
-            panel2.Location = new Point(36, 120);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(382, 49);
-            panel2.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.Font = new Font("Segoe UI", 19F);
-            label5.Location = new Point(0, 3);
-            label5.Name = "label5";
-            label5.Size = new Size(382, 40);
-            label5.TabIndex = 0;
-            label5.Text = "label5";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.Window;
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(36, 194);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(382, 90);
-            panel3.TabIndex = 11;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Segoe UI", 19F);
-            label6.Location = new Point(0, 3);
-            label6.Name = "label6";
-            label6.Size = new Size(382, 87);
-            label6.TabIndex = 0;
-            label6.Text = "label6";
             // 
             // panel4
             // 
@@ -207,6 +119,81 @@
             label7.TabIndex = 0;
             label7.Text = "label7";
             // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.Window;
+            panel3.Controls.Add(label6);
+            panel3.Location = new Point(36, 194);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(382, 90);
+            panel3.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.Font = new Font("Segoe UI", 19F);
+            label6.Location = new Point(0, 3);
+            label6.Name = "label6";
+            label6.Size = new Size(382, 87);
+            label6.TabIndex = 0;
+            label6.Text = "label6";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.Window;
+            panel2.Controls.Add(label5);
+            panel2.Location = new Point(36, 120);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(382, 49);
+            panel2.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Segoe UI", 19F);
+            label5.Location = new Point(0, 3);
+            label5.Name = "label5";
+            label5.Size = new Size(382, 40);
+            label5.TabIndex = 0;
+            label5.Text = "label5";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15F);
+            label4.Location = new Point(124, 10);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 28);
+            label4.TabIndex = 9;
+            label4.Text = "İlan seçimi";
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 15F);
+            label3.Location = new Point(36, 287);
+            label3.Name = "label3";
+            label3.Size = new Size(288, 28);
+            label3.TabIndex = 7;
+            label3.Text = "İlan İle Alakalı Teknik Beklentiler (Aranan nitelikler, yetkinlikler vs.)";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F);
+            label2.Location = new Point(36, 163);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 28);
+            label2.TabIndex = 6;
+            label2.Text = "Gereksinimler";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(36, 89);
+            label1.Name = "label1";
+            label1.Size = new Size(270, 28);
+            label1.TabIndex = 5;
+            label1.Text = "pozisyonun adı ve şirketin adı";
+            // 
             // kariyer_merkezi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,13 +202,14 @@
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "kariyer_merkezi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "kariyer_merkezi";
             Load += kariyer_merkezi_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -235,7 +223,6 @@
         private Label label2;
         private Label label1;
         private Label label4;
-        private Button button3;
         private Panel panel4;
         private Label label7;
         private Panel panel3;

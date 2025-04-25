@@ -27,7 +27,7 @@ namespace proje
         }
         static int ogrenciId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]);
 
-        public static void KisiListesiniYukle(ComboBox comboBox, string query)
+        public static void KisiListesiniYukle(ComboBox comboBox, string query,string reader1,string reader2,string bosluk)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace proje
 
                 while (reader.Read())
                 {
-                    comboBox.Items.Add(reader["isim"].ToString() + " " + reader["soy_isim"].ToString());
+                    comboBox.Items.Add(reader[reader1].ToString() +bosluk+ reader[reader2].ToString());
 
                 }
 
@@ -122,13 +122,13 @@ namespace proje
             if (radioButton1.Checked)
             {
                 query = "SELECT isim,soy_isim FROM ogrenci_bilgi";
-                KisiListesiniYukle(comboBox1, query);
+                KisiListesiniYukle(comboBox1, query,"isim","soy_isim"," ");
 
             }
             else if (radioButton2.Checked)
             {
                 query = "SELECT isim,soy_isim FROM yonetici_bilgi";
-                KisiListesiniYukle(comboBox1, query);
+                KisiListesiniYukle(comboBox1, query, "isim", "soy_isim"," ");
             }
         }
 

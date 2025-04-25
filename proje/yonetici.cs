@@ -73,5 +73,11 @@ namespace proje
             yemekhane_yon yemekhane = new yemekhane_yon();
             yemekhane.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            kariyer_yon kariyer_Yon = new kariyer_yon();
+            kariyer_Yon.Show();
+        }
     }
 }
