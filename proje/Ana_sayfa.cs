@@ -86,7 +86,7 @@ namespace proje
             mesaj_form msj = new mesaj_form();
             msj.Show();
         }
-        //öğrenci profili formunu açıyor
+        //öğrenci profili formunu açıyorr
         private void btn_profil_Click(object sender, EventArgs e)
         {
             profil profil = new profil();
