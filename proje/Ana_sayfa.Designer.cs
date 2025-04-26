@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             Close_btn = new Button();
             panel1 = new Panel();
@@ -55,6 +56,7 @@
             btn_ebs = new Button();
             btn_eds = new Button();
             btn_obs = new Button();
+            mesajTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -382,6 +384,10 @@
             btn_obs.UseVisualStyleBackColor = false;
             btn_obs.Click += button1_Click;
             // 
+            // mesajTimer
+            // 
+            mesajTimer.Tick += timer1_Tick;
+            // 
             // Ana_sayfa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -429,5 +435,6 @@
         private Button btn_profil;
         private Button btn_otrm_kapat;
         private Button btn_ebs;
+        private System.Windows.Forms.Timer mesajTimer;
     }
 }

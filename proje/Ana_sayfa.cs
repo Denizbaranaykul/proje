@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static proje.Giris;
-
+using MySql.Data.MySqlClient;
 namespace proje
 {
     public partial class Ana_sayfa : Form
@@ -28,6 +28,9 @@ namespace proje
 
 
             }
+            mesajTimer.Interval = 60000; // 60.000 ms = 60 saniye
+            mesajTimer.Tick += timer1_Tick;
+            mesajTimer.Start();
             tam_isim = lbl_profil.Text;
         }
         //programı kapatıyor
@@ -138,6 +141,30 @@ namespace proje
         {
             kariyer_merkezi kariyer = new kariyer_merkezi();
             kariyer.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalDatabase.Conn.Open();
+                string query = "SELECT COUNT(*) FROM mesajlar WHERE alici_ogrenci_id = @alici_ogrenci_id AND okundu = 0";
+                MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
+                cmd.Parameters.AddWithValue("@alici_ogrenci_id", GlobalDatabase.Dt.Rows[0]["id"]);
+                int yeniMesajSayisi = Convert.ToInt32(cmd.ExecuteScalar());
+                GlobalDatabase.Conn.Close();
+
+                if (yeniMesajSayisi > 0)
+                {
+                    MessageBox.Show($"Yeni {yeniMesajSayisi} mesajınız var!", "Yeni Mesaj", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+                if (GlobalDatabase.Conn.State == ConnectionState.Open)
+                    GlobalDatabase.Conn.Close();
+            }
         }
     }
 }
