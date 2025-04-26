@@ -86,5 +86,11 @@ namespace proje
             this.Close();
             Giris.girisFormu.Show();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            mesaj_form msj = new mesaj_form();
+            msj.Show();
+        }
     }
 }

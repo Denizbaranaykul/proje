@@ -16,12 +16,12 @@ namespace proje
 {
     public partial class mesaj_form : Form
     {
-
+        
         public mesaj_form()
         {
             InitializeComponent();
             radioButton1.Checked = true;
-
+            int mesaj = Giris.mesaj;
 
 
         }
@@ -54,27 +54,38 @@ namespace proje
             }
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 string sorgu = "";
                 string sorgu2;
-
+                
                 GlobalDatabase.Conn.Open();
 
-                if (radioButton1.Checked)
+                if (radioButton1.Checked&& mesaj==1)
                 {
                     sorgu = "insert into mesajlar (gonderen_ogrenci_id,alici_ogrenci_id,baslik,mesaj_metni,gonderen)VALUES (@gonderen_id,@alici_id,@baslik,@mesaj_metni,@gonderen)";
                     sorgu2 = "SELECT * FROM ogrenci_bilgi WHERE isim=@isim and soy_isim=@soy_isim";
                 }
-                else
+                else if (radioButton2.Checked&& mesaj==1) 
                 {
                     sorgu = "insert into mesajlar (gonderen_ogrenci_id,alici_yonetici_id,baslik,mesaj_metni,gonderen)VALUES (@gonderen_id,@alici_id,@baslik,@mesaj_metni,@gonderen)";
                     sorgu2 = "SELECT * FROM yonetici_bilgi WHERE isim=@isim and soy_isim=@soy_isim";
                 }
-                MySqlCommand alici = new MySqlCommand(sorgu2, GlobalDatabase.Conn);
+                else if(radioButton1.Checked &&  mesaj==2)
+                {
+                    sorgu = "insert into mesajlar (gonderen_yonetici_id,alici_ogrenci_id,baslik,mesaj_metni,gonderen)VALUES (@gonderen_id,@alici_id,@baslik,@mesaj_metni,@gonderen)";
+                    sorgu2 = "SELECT * FROM ogrenci_bilgi WHERE isim=@isim and soy_isim=@soy_isim";
+                }
+                else
+                {
+                    sorgu = "insert into mesajlar (gonderen_yonetici_id,alici_yonetici_id,baslik,mesaj_metni,gonderen)VALUES (@gonderen_id,@alici_id,@baslik,@mesaj_metni,@gonderen)";
+                    sorgu2 = "SELECT * FROM yonetici_bilgi WHERE isim=@isim and soy_isim=@soy_isim";
+                }
+                    MySqlCommand alici = new MySqlCommand(sorgu2, GlobalDatabase.Conn);
                 alici.Parameters.AddWithValue("@isim", label_isim.Text);
                 alici.Parameters.AddWithValue("@soy_isim", label_soy_isim.Text);
 
@@ -151,7 +162,16 @@ namespace proje
         }
         private void Yazma(int aliciId)
         {
-            string query = "SELECT gonderen,baslik,mesaj_metni,gonderim_tarihi FROM mesajlar WHERE alici_ogrenci_id = @alici_ogrenci_id";
+            string query;
+            if(mesaj==1)
+            {
+                query = "SELECT gonderen,baslik,mesaj_metni,gonderim_tarihi FROM mesajlar WHERE alici_ogrenci_id = @alici_ogrenci_id";
+            }
+            else
+            {
+                query = "SELECT gonderen,baslik,mesaj_metni,gonderim_tarihi FROM mesajlar WHERE alici_yonetici_id = @alici_ogrenci_id";
+            }
+
             MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
             cmd.Parameters.AddWithValue("@alici_ogrenci_id", aliciId);
 

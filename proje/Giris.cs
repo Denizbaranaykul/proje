@@ -16,6 +16,7 @@ namespace proje
         public MySqlDataAdapter adapter;
         public DataTable dt;
         public static int taban = 0;
+        public static int mesaj=0;
         public Giris()
         {
 
@@ -80,6 +81,7 @@ namespace proje
                     {
                         anaSayfaForm = new Ana_sayfa();
                     }
+                    mesaj = 1;
                     anaSayfaForm.Show();
                     this.Hide();
 
@@ -93,6 +95,7 @@ namespace proje
                     GlobalDatabase.Dt = dt;
 
                     yonetici yonetici = new yonetici();
+                    mesaj = 2;
                     this.Hide();
                     yonetici.Show();
                 }

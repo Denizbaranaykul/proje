@@ -46,12 +46,12 @@
             btn_personel_ekle = new Button();
             btn_ogrenci_ekle = new Button();
             panel2 = new Panel();
+            btn_oturum = new Button();
             arama = new Button();
             arama_cubugu = new ListBox();
             label1 = new Label();
             arama_textbox = new TextBox();
             pictureBox2 = new PictureBox();
-            btn_oturum = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -128,8 +128,9 @@
             button12.Name = "button12";
             button12.Size = new Size(175, 68);
             button12.TabIndex = 11;
-            button12.Text = "şikayet kutusu";
+            button12.Text = "normal mesaj";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button11
             // 
@@ -265,6 +266,17 @@
             panel2.Size = new Size(1151, 212);
             panel2.TabIndex = 14;
             // 
+            // btn_oturum
+            // 
+            btn_oturum.Location = new Point(1028, 140);
+            btn_oturum.Margin = new Padding(3, 2, 3, 2);
+            btn_oturum.Name = "btn_oturum";
+            btn_oturum.Size = new Size(109, 22);
+            btn_oturum.TabIndex = 18;
+            btn_oturum.Text = "oturumu kapat";
+            btn_oturum.UseVisualStyleBackColor = true;
+            btn_oturum.Click += btn_oturum_Click;
+            // 
             // arama
             // 
             arama.Location = new Point(515, 59);
@@ -313,17 +325,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
-            // 
-            // btn_oturum
-            // 
-            btn_oturum.Location = new Point(1028, 140);
-            btn_oturum.Margin = new Padding(3, 2, 3, 2);
-            btn_oturum.Name = "btn_oturum";
-            btn_oturum.Size = new Size(109, 22);
-            btn_oturum.TabIndex = 18;
-            btn_oturum.Text = "oturumu kapat";
-            btn_oturum.UseVisualStyleBackColor = true;
-            btn_oturum.Click += btn_oturum_Click;
             // 
             // yonetici
             // 
