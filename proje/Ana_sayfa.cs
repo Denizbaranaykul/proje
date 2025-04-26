@@ -148,7 +148,7 @@ namespace proje
             try
             {
                 GlobalDatabase.Conn.Open();
-                string query = "SELECT COUNT(*) FROM mesajlar WHERE alici_ogrenci_id = @alici_ogrenci_id AND okundu = 0";
+                string query = "SELECT COUNT(*) FROM mesajlar WHERE alici_ogrenci_id = @alici_ogrenci_id AND gonderim_tarihi >= NOW() - INTERVAL 1 MINUTE";
                 MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
                 cmd.Parameters.AddWithValue("@alici_ogrenci_id", GlobalDatabase.Dt.Rows[0]["id"]);
                 int yeniMesajSayisi = Convert.ToInt32(cmd.ExecuteScalar());
@@ -165,6 +165,7 @@ namespace proje
                 if (GlobalDatabase.Conn.State == ConnectionState.Open)
                     GlobalDatabase.Conn.Close();
             }
+
         }
     }
 }
