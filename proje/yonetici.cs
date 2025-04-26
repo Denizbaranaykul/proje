@@ -79,5 +79,12 @@ namespace proje
             kariyer_yon kariyer_Yon = new kariyer_yon();
             kariyer_Yon.Show();
         }
+
+        private void btn_oturum_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            Giris.girisFormu.Show();
+        }
     }
 }

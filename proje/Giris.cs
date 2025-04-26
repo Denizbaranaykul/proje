@@ -9,6 +9,7 @@ namespace proje
     public partial class Giris : Form
     {
         public static Ana_sayfa anaSayfaForm;
+        public static yonetici yon;
         public static Giris girisFormu;
         public MySqlConnection conn = new MySqlConnection("Server=192.168.1.8;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
         public MySqlCommand cmd;

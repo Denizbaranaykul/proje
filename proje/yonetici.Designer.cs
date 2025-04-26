@@ -51,6 +51,7 @@
             label1 = new Label();
             arama_textbox = new TextBox();
             pictureBox2 = new PictureBox();
+            btn_oturum = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             // btn_profil
             // 
-            btn_profil.Location = new Point(1027, 118);
+            btn_profil.Location = new Point(1028, 111);
             btn_profil.Margin = new Padding(3, 2, 3, 2);
             btn_profil.Name = "btn_profil";
             btn_profil.Size = new Size(109, 25);
@@ -90,7 +91,7 @@
             // 
             // Close_btn
             // 
-            Close_btn.Location = new Point(1027, 147);
+            Close_btn.Location = new Point(1028, 166);
             Close_btn.Margin = new Padding(3, 2, 3, 2);
             Close_btn.Name = "Close_btn";
             Close_btn.Size = new Size(109, 22);
@@ -114,35 +115,35 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(btn_personel_ekle);
             panel1.Controls.Add(btn_ogrenci_ekle);
-            panel1.Location = new Point(10, 182);
+            panel1.Location = new Point(3, 177);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1139, 212);
+            panel1.Size = new Size(1151, 254);
             panel1.TabIndex = 13;
             // 
             // button12
             // 
-            button12.Location = new Point(964, 20);
+            button12.Location = new Point(769, 63);
             button12.Margin = new Padding(3, 2, 3, 2);
             button12.Name = "button12";
-            button12.Size = new Size(166, 68);
+            button12.Size = new Size(175, 68);
             button12.TabIndex = 11;
             button12.Text = "şikayet kutusu";
             button12.UseVisualStyleBackColor = true;
             // 
             // button11
             // 
-            button11.Location = new Point(964, 122);
+            button11.Location = new Point(962, 165);
             button11.Margin = new Padding(3, 2, 3, 2);
             button11.Name = "button11";
-            button11.Size = new Size(166, 68);
+            button11.Size = new Size(174, 68);
             button11.TabIndex = 10;
             button11.Text = "Erasmus başvuruları";
             button11.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
-            button10.Location = new Point(771, 122);
+            button10.Location = new Point(769, 165);
             button10.Margin = new Padding(3, 2, 3, 2);
             button10.Name = "button10";
             button10.Size = new Size(175, 68);
@@ -152,7 +153,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(558, 122);
+            button9.Location = new Point(556, 165);
             button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
             button9.Size = new Size(191, 68);
@@ -162,7 +163,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(406, 122);
+            button8.Location = new Point(404, 165);
             button8.Margin = new Padding(3, 2, 3, 2);
             button8.Name = "button8";
             button8.Size = new Size(132, 68);
@@ -173,7 +174,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(206, 122);
+            button7.Location = new Point(204, 165);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(170, 68);
@@ -184,7 +185,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(15, 122);
+            button6.Location = new Point(13, 165);
             button6.Margin = new Padding(3, 2, 3, 2);
             button6.Name = "button6";
             button6.Size = new Size(166, 68);
@@ -194,7 +195,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(771, 20);
+            button5.Location = new Point(961, 63);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(175, 68);
@@ -205,17 +206,17 @@
             // 
             // button4
             // 
-            button4.Location = new Point(558, 20);
+            button4.Location = new Point(556, 63);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(191, 68);
             button4.TabIndex = 3;
-            button4.Text = "topluluk başkanı toplıu mesaj";
+            button4.Text = "toplu mesaj";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(406, 20);
+            button3.Location = new Point(404, 63);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(132, 68);
@@ -225,7 +226,7 @@
             // 
             // btn_personel_ekle
             // 
-            btn_personel_ekle.Location = new Point(206, 20);
+            btn_personel_ekle.Location = new Point(204, 63);
             btn_personel_ekle.Margin = new Padding(3, 2, 3, 2);
             btn_personel_ekle.Name = "btn_personel_ekle";
             btn_personel_ekle.Size = new Size(170, 68);
@@ -236,7 +237,7 @@
             // 
             // btn_ogrenci_ekle
             // 
-            btn_ogrenci_ekle.Location = new Point(15, 20);
+            btn_ogrenci_ekle.Location = new Point(13, 63);
             btn_ogrenci_ekle.Margin = new Padding(3, 2, 3, 2);
             btn_ogrenci_ekle.Name = "btn_ogrenci_ekle";
             btn_ogrenci_ekle.Size = new Size(166, 68);
@@ -248,6 +249,7 @@
             // panel2
             // 
             panel2.BackColor = Color.SteelBlue;
+            panel2.Controls.Add(btn_oturum);
             panel2.Controls.Add(arama);
             panel2.Controls.Add(arama_cubugu);
             panel2.Controls.Add(label1);
@@ -257,10 +259,10 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(lbl_profil);
             panel2.Controls.Add(btn_profil);
-            panel2.Location = new Point(10, 4);
+            panel2.Location = new Point(3, 4);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1139, 173);
+            panel2.Size = new Size(1151, 212);
             panel2.TabIndex = 14;
             // 
             // arama
@@ -312,11 +314,22 @@
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             // 
+            // btn_oturum
+            // 
+            btn_oturum.Location = new Point(1028, 140);
+            btn_oturum.Margin = new Padding(3, 2, 3, 2);
+            btn_oturum.Name = "btn_oturum";
+            btn_oturum.Size = new Size(109, 22);
+            btn_oturum.TabIndex = 18;
+            btn_oturum.Text = "oturumu kapat";
+            btn_oturum.UseVisualStyleBackColor = true;
+            btn_oturum.Click += btn_oturum_Click;
+            // 
             // yonetici
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1152, 399);
+            ClientSize = new Size(1152, 434);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
@@ -355,5 +368,6 @@
         private ListBox arama_cubugu;
         private Label label1;
         private TextBox arama_textbox;
+        private Button btn_oturum;
     }
 }

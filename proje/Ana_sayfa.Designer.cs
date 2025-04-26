@@ -42,14 +42,14 @@
             panel2 = new Panel();
             btn_makale = new Button();
             btn_ulasim = new Button();
-            btn_harita = new Button();
             btn_yvmb = new Button();
             btn_genelduyurular = new Button();
+            btn_harita = new Button();
             btn_kütüpanesistemi = new Button();
             btn_kariyermerkezi = new Button();
-            btn_msj = new Button();
             btn_ogrencikulupleri = new Button();
             btn_ak = new Button();
+            btn_msj = new Button();
             btn_dpvm = new Button();
             btn_oibs = new Button();
             btn_ebs = new Button();
@@ -189,14 +189,14 @@
             panel2.BackColor = Color.LightBlue;
             panel2.Controls.Add(btn_makale);
             panel2.Controls.Add(btn_ulasim);
-            panel2.Controls.Add(btn_harita);
             panel2.Controls.Add(btn_yvmb);
             panel2.Controls.Add(btn_genelduyurular);
+            panel2.Controls.Add(btn_harita);
             panel2.Controls.Add(btn_kütüpanesistemi);
             panel2.Controls.Add(btn_kariyermerkezi);
-            panel2.Controls.Add(btn_msj);
             panel2.Controls.Add(btn_ogrencikulupleri);
             panel2.Controls.Add(btn_ak);
+            panel2.Controls.Add(btn_msj);
             panel2.Controls.Add(btn_dpvm);
             panel2.Controls.Add(btn_oibs);
             panel2.Controls.Add(btn_ebs);
@@ -212,7 +212,7 @@
             // btn_makale
             // 
             btn_makale.BackColor = Color.Beige;
-            btn_makale.Location = new Point(970, 196);
+            btn_makale.Location = new Point(270, 196);
             btn_makale.Margin = new Padding(3, 2, 3, 2);
             btn_makale.Name = "btn_makale";
             btn_makale.Size = new Size(170, 71);
@@ -223,7 +223,7 @@
             // btn_ulasim
             // 
             btn_ulasim.BackColor = Color.Beige;
-            btn_ulasim.Location = new Point(970, 107);
+            btn_ulasim.Location = new Point(960, 107);
             btn_ulasim.Margin = new Padding(3, 2, 3, 2);
             btn_ulasim.Name = "btn_ulasim";
             btn_ulasim.Size = new Size(170, 71);
@@ -232,21 +232,10 @@
             btn_ulasim.UseVisualStyleBackColor = false;
             btn_ulasim.Click += btn_ulasim_Click;
             // 
-            // btn_harita
-            // 
-            btn_harita.BackColor = Color.Beige;
-            btn_harita.Location = new Point(970, 14);
-            btn_harita.Margin = new Padding(3, 2, 3, 2);
-            btn_harita.Name = "btn_harita";
-            btn_harita.Size = new Size(170, 71);
-            btn_harita.TabIndex = 12;
-            btn_harita.Text = "Kampüs Haritası Ve Rehber";
-            btn_harita.UseVisualStyleBackColor = false;
-            // 
             // btn_yvmb
             // 
             btn_yvmb.BackColor = Color.Beige;
-            btn_yvmb.Location = new Point(733, 196);
+            btn_yvmb.Location = new Point(960, 196);
             btn_yvmb.Margin = new Padding(3, 2, 3, 2);
             btn_yvmb.Name = "btn_yvmb";
             btn_yvmb.Size = new Size(170, 71);
@@ -258,13 +247,24 @@
             // btn_genelduyurular
             // 
             btn_genelduyurular.BackColor = Color.Beige;
-            btn_genelduyurular.Location = new Point(733, 107);
+            btn_genelduyurular.Location = new Point(513, 107);
             btn_genelduyurular.Margin = new Padding(3, 2, 3, 2);
             btn_genelduyurular.Name = "btn_genelduyurular";
             btn_genelduyurular.Size = new Size(170, 71);
             btn_genelduyurular.TabIndex = 10;
             btn_genelduyurular.Text = "Genel Duyurular";
             btn_genelduyurular.UseVisualStyleBackColor = false;
+            // 
+            // btn_harita
+            // 
+            btn_harita.BackColor = Color.Beige;
+            btn_harita.Location = new Point(28, 14);
+            btn_harita.Margin = new Padding(3, 2, 3, 2);
+            btn_harita.Name = "btn_harita";
+            btn_harita.Size = new Size(170, 71);
+            btn_harita.TabIndex = 12;
+            btn_harita.Text = "Kampüs Haritası Ve Rehber";
+            btn_harita.UseVisualStyleBackColor = false;
             // 
             // btn_kütüpanesistemi
             // 
@@ -281,7 +281,7 @@
             // btn_kariyermerkezi
             // 
             btn_kariyermerkezi.BackColor = Color.Beige;
-            btn_kariyermerkezi.Location = new Point(513, 196);
+            btn_kariyermerkezi.Location = new Point(733, 196);
             btn_kariyermerkezi.Margin = new Padding(3, 2, 3, 2);
             btn_kariyermerkezi.Name = "btn_kariyermerkezi";
             btn_kariyermerkezi.Size = new Size(170, 71);
@@ -290,22 +290,10 @@
             btn_kariyermerkezi.UseVisualStyleBackColor = false;
             btn_kariyermerkezi.Click += btn_kariyermerkezi_Click;
             // 
-            // btn_msj
-            // 
-            btn_msj.BackColor = Color.Beige;
-            btn_msj.Location = new Point(513, 107);
-            btn_msj.Margin = new Padding(3, 2, 3, 2);
-            btn_msj.Name = "btn_msj";
-            btn_msj.Size = new Size(170, 71);
-            btn_msj.TabIndex = 7;
-            btn_msj.Text = "Mesaj sistemi";
-            btn_msj.UseVisualStyleBackColor = false;
-            btn_msj.Click += btn_edp_Click;
-            // 
             // btn_ogrencikulupleri
             // 
             btn_ogrencikulupleri.BackColor = Color.Beige;
-            btn_ogrencikulupleri.Location = new Point(513, 14);
+            btn_ogrencikulupleri.Location = new Point(513, 196);
             btn_ogrencikulupleri.Margin = new Padding(3, 2, 3, 2);
             btn_ogrencikulupleri.Name = "btn_ogrencikulupleri";
             btn_ogrencikulupleri.Size = new Size(170, 71);
@@ -317,7 +305,7 @@
             // btn_ak
             // 
             btn_ak.BackColor = Color.Beige;
-            btn_ak.Location = new Point(270, 196);
+            btn_ak.Location = new Point(513, 14);
             btn_ak.Margin = new Padding(3, 2, 3, 2);
             btn_ak.Name = "btn_ak";
             btn_ak.Size = new Size(170, 71);
@@ -325,6 +313,18 @@
             btn_ak.Text = "Akademik Kadro";
             btn_ak.UseVisualStyleBackColor = false;
             btn_ak.Click += btn_ak_Click;
+            // 
+            // btn_msj
+            // 
+            btn_msj.BackColor = Color.Beige;
+            btn_msj.Location = new Point(960, 14);
+            btn_msj.Margin = new Padding(3, 2, 3, 2);
+            btn_msj.Name = "btn_msj";
+            btn_msj.Size = new Size(170, 71);
+            btn_msj.TabIndex = 7;
+            btn_msj.Text = "Mesaj sistemi";
+            btn_msj.UseVisualStyleBackColor = false;
+            btn_msj.Click += btn_edp_Click;
             // 
             // btn_dpvm
             // 
@@ -373,7 +373,7 @@
             // btn_obs
             // 
             btn_obs.BackColor = Color.Beige;
-            btn_obs.Location = new Point(28, 14);
+            btn_obs.Location = new Point(733, 107);
             btn_obs.Margin = new Padding(3, 2, 3, 2);
             btn_obs.Name = "btn_obs";
             btn_obs.Size = new Size(170, 71);
