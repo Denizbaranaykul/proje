@@ -167,5 +167,11 @@ namespace proje
             }
 
         }
+
+        private void btn_harita_Click(object sender, EventArgs e)
+        {
+            kampüs_harita harita = new kampüs_harita();
+            harita.Show();
+        }
     }
 }
