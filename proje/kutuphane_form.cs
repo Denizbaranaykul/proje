@@ -21,15 +21,15 @@ namespace proje
         }
         private void EKitaplariYukle()
         {
-            string query = "SELECT id, title, author, file_path FROM books WHERE is_ebook = 1";
-            MySqlDataAdapter da = new MySqlDataAdapter(query,GlobalDatabase.Conn);
+            string query = "SELECT  title, author FROM books WHERE is_ebook = 1";
+            MySqlDataAdapter da = new MySqlDataAdapter(query, GlobalDatabase.Conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView2.DataSource = dt;
         }
         private void KitaplariYukle()
         {
-            string query = "SELECT id, title, author, file_path FROM books WHERE is_ebook = 0";
+            string query = "SELECT  title, author FROM books WHERE is_ebook = 0";
             MySqlDataAdapter da = new MySqlDataAdapter(query, GlobalDatabase.Conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -62,6 +62,35 @@ namespace proje
                         }
                     }
                 }
+            }
+        }
+
+        private void btn_ara_Click(object sender, EventArgs e)
+        {
+            string arananKelime = textBox1.Text.Trim(); // txt_ara, bir TextBox olduğunu varsayıyorum
+            if (string.IsNullOrEmpty(arananKelime))
+            {
+                // Eğer arama kutusu boşsa, tüm kitapları tekrar yükle
+                KitaplariYukle();
+                EKitaplariYukle();
+            }
+            else
+            {
+                // Normal kitaplar için arama
+                string queryNormal = "SELECT  title, author FROM books WHERE is_ebook = 0 AND title LIKE @title";
+                MySqlDataAdapter daNormal = new MySqlDataAdapter(queryNormal, GlobalDatabase.Conn);
+                daNormal.SelectCommand.Parameters.AddWithValue("@title", "%" + arananKelime + "%");
+                DataTable dtNormal = new DataTable();
+                daNormal.Fill(dtNormal);
+                dataGridView1.DataSource = dtNormal;
+
+                // E-kitaplar için arama
+                string queryEkitap = "SELECT title, author FROM books WHERE is_ebook = 1 AND title LIKE @title";
+                MySqlDataAdapter daEkitap = new MySqlDataAdapter(queryEkitap, GlobalDatabase.Conn);
+                daEkitap.SelectCommand.Parameters.AddWithValue("@title", "%" + arananKelime + "%");
+                DataTable dtEkitap = new DataTable();
+                daEkitap.Fill(dtEkitap);
+                dataGridView2.DataSource = dtEkitap;
             }
         }
     }
