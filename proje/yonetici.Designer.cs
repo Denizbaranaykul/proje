@@ -151,6 +151,7 @@
             button10.TabIndex = 9;
             button10.Text = "not ekleme";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 

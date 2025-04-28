@@ -92,5 +92,11 @@ namespace proje
             mesaj_form msj = new mesaj_form();
             msj.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            not_ekleme not=new not_ekleme();    
+            not.Show();
+        }
     }
 }
