@@ -136,7 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1281, 749);
+            ClientSize = new Size(976, 656);
             Controls.Add(checkedListBox1);
             Controls.Add(label5);
             Controls.Add(radioButton2);

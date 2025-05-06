@@ -212,6 +212,7 @@
             button3.TabIndex = 2;
             button3.Text = "kulüp başvuruları";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // btn_personel_ekle
             // 

@@ -87,7 +87,14 @@ namespace proje
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            GlobalDatabase.Conn.Open();
+            string query = "INSERT INTO topluluklar(topluluk_adi,danisman_hoca) VALUES(@isim,@hoca)";
+            MySqlCommand cmd = new MySqlCommand(query,GlobalDatabase.Conn);
+            cmd.Parameters.AddWithValue("@isim",textBox1.Text);
+            cmd.Parameters.AddWithValue("@hoca",comboBox1.Text);
+            cmd.ExecuteNonQuery();
+            GlobalDatabase.Conn.Close();
+            MessageBox.Show("Başvuru başarı ile yapıldı");
         }
     }
 }

@@ -101,8 +101,14 @@ namespace proje
 
         private void button4_Click(object sender, EventArgs e)
         {
-            toplu_mesaj toplu_mesaj=new toplu_mesaj();
+            toplu_mesaj toplu_mesaj = new toplu_mesaj();
             toplu_mesaj.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Kulup_basvuru kulup_Basvuru = new Kulup_basvuru();
+            kulup_Basvuru.Show();
         }
     }
 }
