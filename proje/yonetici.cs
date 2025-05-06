@@ -95,8 +95,14 @@ namespace proje
 
         private void button10_Click(object sender, EventArgs e)
         {
-            not_ekleme not=new not_ekleme();    
+            not_ekleme not = new not_ekleme();
             not.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            toplu_mesaj toplu_mesaj=new toplu_mesaj();
+            toplu_mesaj.Show();
         }
     }
 }
