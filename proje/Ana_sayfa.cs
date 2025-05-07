@@ -29,16 +29,16 @@ namespace proje
                 MySqlCommand komut = new MySqlCommand(query, GlobalDatabase.Conn);
                 komut.Parameters.AddWithValue("@id", GlobalDatabase.Dt.Rows[0]["id"]);
                 MySqlDataReader reader = komut.ExecuteReader();
-                if(reader.Read())
+                if (reader.Read())
                 {
                     byte[] fotoVerisi = (byte[])reader["profil_foto"];
                     if (fotoVerisi.Length > 0)
                     {
                         using (MemoryStream ms = new MemoryStream(fotoVerisi))
                         {
-                           
-                                pictureBox1.Image = Image.FromStream(ms);
-                           
+
+                            pictureBox1.Image = Image.FromStream(ms);
+
                         }
                     }
                 }
@@ -188,6 +188,12 @@ namespace proje
         {
             kampüs_harita harita = new kampüs_harita();
             harita.Show();
+        }
+
+        private void btn_makale_Click_1(object sender, EventArgs e)
+        {
+            makale_goster goster= new makale_goster();
+            goster.Show();
         }
     }
 }

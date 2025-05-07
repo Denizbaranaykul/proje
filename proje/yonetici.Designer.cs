@@ -152,8 +152,9 @@
             button9.Name = "button9";
             button9.Size = new Size(218, 91);
             button9.TabIndex = 8;
-            button9.Text = "müfredat ekleme";
+            button9.Text = "makale ekleme";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button8
             // 

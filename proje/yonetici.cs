@@ -110,5 +110,11 @@ namespace proje
             Kulup_basvuru kulup_Basvuru = new Kulup_basvuru();
             kulup_Basvuru.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            makale_ekle ekle=new makale_ekle();
+            ekle.Show();
+        }
     }
 }

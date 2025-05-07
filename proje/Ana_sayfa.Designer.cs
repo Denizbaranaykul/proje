@@ -209,6 +209,7 @@
             btn_makale.TabIndex = 14;
             btn_makale.Text = "Makale Ve Dergiler";
             btn_makale.UseVisualStyleBackColor = false;
+            btn_makale.Click += btn_makale_Click_1;
             // 
             // btn_ulasim
             // 
