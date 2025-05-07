@@ -48,7 +48,7 @@ namespace proje
         {
             DosyaIndirVeSil();
         }
-
+        private byte[] profilFotoBytes;
         private void DosyaIndirVeSil()
         {
             try
@@ -61,15 +61,43 @@ namespace proje
                 }
 
                 // En eski dosyayı al (örnek olarak ID'si en küçük olan)
-                string query = "SELECT id, dosya_adi, dosya_icerik FROM belgeler ORDER BY id ASC LIMIT 1";
+                string query = "SELECT id, dosya_adi, dosya_icerik,profil_foto,e_mail FROM belgeler ORDER BY id ASC LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
-
+                    
                 if (reader.Read())
                 {
                     int dosyaId = Convert.ToInt32(reader["id"]);
                     string dosyaAdi = reader["dosya_adi"].ToString();
                     byte[] dosyaVerisi = (byte[])reader["dosya_icerik"];
+                    string mail=reader["e_mail"].ToString();
+                    txt_mail.Text= mail;
+                     profilFotoBytes = (byte[])reader["profil_foto"];
+                    
+                    if (!reader.IsDBNull(reader.GetOrdinal("profil_foto")))
+                    {
+                        byte[] fotoVerisi = (byte[])reader["profil_foto"];
+                        if (fotoVerisi.Length > 0)
+                        {
+                            using (MemoryStream ms = new MemoryStream(fotoVerisi))
+                            {
+                                try
+                                {
+                                    pictureBox1.Image = Image.FromStream(ms);
+                                }
+                                catch (ArgumentException)
+                                {
+                                    MessageBox.Show("Profil fotoğrafı okunamadı. Format bozuk olabilir.");
+                                    pictureBox1.Image = null;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
+
 
                     reader.Close(); // Reader açıkken DELETE yapılamaz
 
@@ -110,19 +138,27 @@ namespace proje
         private void button1_Click(object sender, EventArgs e)
         {
             GlobalDatabase.Conn.Open();
-            string sorgu = "insert into ogrenci_bilgi (Tc,isim,soy_isim,bolum,email,sifre,durum) VALUES(@tc,@isim,@soy_isim,@bolum,@email,@sifre,@durum)";
+            string sorgu = "insert into ogrenci_bilgi (Tc,isim,soy_isim,bolum,email,sifre,durum,profil_foto) VALUES(@tc,@isim,@soy_isim,@bolum,@email,@sifre,@durum,@foto)";
 
             MySqlCommand cmd = new MySqlCommand(sorgu, GlobalDatabase.Conn);
             cmd.Parameters.AddWithValue("@tc", maskedTextBox1.Text);
             cmd.Parameters.AddWithValue("@isim", textBox1.Text);
             cmd.Parameters.AddWithValue("@soy_isim", textBox2.Text);
             cmd.Parameters.AddWithValue("@bolum", textBox3.Text);
-            cmd.Parameters.AddWithValue("@email", textBox4.Text);
+            cmd.Parameters.AddWithValue("@email", txt_mail.Text);
             cmd.Parameters.AddWithValue("@sifre", textBox5.Text);
             cmd.Parameters.AddWithValue("@durum", "aktif");
+            cmd.Parameters.AddWithValue("@foto",profilFotoBytes);
             cmd.ExecuteNonQuery();
             MessageBox.Show("öğrenci başarı ile eklendi");
             GlobalDatabase.Conn.Close();
+            maskedTextBox1.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            txt_mail.Clear();
+            textBox5.Clear();
+            pictureBox1.Image = null;
             box();
 
         }

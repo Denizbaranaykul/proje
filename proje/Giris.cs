@@ -155,59 +155,8 @@ namespace proje
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dosyaSec = new OpenFileDialog();
-            dosyaSec.Title = "Lütfen sýnav sonuç belgenizi yükleyiniz";
-            dosyaSec.Filter = "PDF Dosyalarý (*.pdf)|*.pdf";
-
-            if (dosyaSec.ShowDialog() == DialogResult.OK)
-            {
-                string dosyaYolu = dosyaSec.FileName;
-                MessageBox.Show("Seçilen dosya: " + dosyaYolu);
-
-                // Örnek: Seçilen dosyayý bir klasöre kopyala (Proje klasörü altýnda "uploads" klasörü oluþturulmuþ varsayýlýr)
-                string hedefKlasor = Path.Combine(Application.StartupPath, "uploads");
-                Directory.CreateDirectory(hedefKlasor); // Klasör yoksa oluþtur
-                string hedefYol = Path.Combine(hedefKlasor, Path.GetFileName(dosyaYolu));
-
-                File.Copy(dosyaYolu, hedefYol, true); // overwrite: true
-                byte[] dosyaVerisi = File.ReadAllBytes(dosyaYolu);
-
-                // Veritabaný baðlantýsýný kontrol et
-                if (GlobalDatabase.Conn == null || GlobalDatabase.Conn.State == ConnectionState.Closed)
-                {
-                    try
-                    {
-                        // Baðlantýyý aç
-                        GlobalDatabase.Conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
-                        GlobalDatabase.Conn.Open();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Veritabaný baðlantýsý saðlanamadý: " + ex.Message);
-                        return;
-                    }
-                }
-
-                string query = "INSERT INTO belgeler (dosya_adi, dosya_icerik) VALUES (@ad, @icerik)";
-                MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
-                cmd.Parameters.AddWithValue("@ad", Path.GetFileName(dosyaYolu));
-                cmd.Parameters.Add("@icerik", MySqlDbType.Blob).Value = dosyaVerisi;
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Dosya baþarýyla yüklendi.");
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Dosya yüklenirken hata oluþtu: " + ex.Message);
-                }
-                finally
-                {
-                    // Baðlantýyý kapat
-                    GlobalDatabase.Conn.Close();
-                }
-            }
+            kayýt_alma kayýt = new kayýt_alma();
+            kayýt.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

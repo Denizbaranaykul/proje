@@ -38,7 +38,7 @@
             label4 = new Label();
             textBox3 = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txt_mail = new TextBox();
             label6 = new Label();
             textBox5 = new TextBox();
             button1 = new Button();
@@ -50,13 +50,15 @@
             label8 = new Label();
             button5 = new Button();
             label9 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button4
             // 
-            button4.Location = new Point(464, 68);
+            button4.Location = new Point(464, 262);
             button4.Name = "button4";
-            button4.Size = new Size(245, 176);
+            button4.Size = new Size(245, 48);
             button4.TabIndex = 0;
             button4.Text = "sırada ki öğrenci dosyasını indir";
             button4.UseVisualStyleBackColor = true;
@@ -136,12 +138,12 @@
             label5.TabIndex = 10;
             label5.Text = "e-mail";
             // 
-            // textBox4
+            // txt_mail
             // 
-            textBox4.Location = new Point(233, 205);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(195, 27);
-            textBox4.TabIndex = 9;
+            txt_mail.Location = new Point(233, 205);
+            txt_mail.Name = "txt_mail";
+            txt_mail.Size = new Size(195, 27);
+            txt_mail.TabIndex = 9;
             // 
             // label6
             // 
@@ -172,7 +174,7 @@
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(464, 351);
+            checkedListBox1.Location = new Point(464, 399);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(245, 180);
             checkedListBox1.TabIndex = 14;
@@ -189,9 +191,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(464, 548);
+            button3.Location = new Point(464, 604);
             button3.Name = "button3";
-            button3.Size = new Size(245, 114);
+            button3.Size = new Size(245, 106);
             button3.TabIndex = 16;
             button3.Text = "sil";
             button3.UseVisualStyleBackColor = true;
@@ -201,7 +203,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 19F);
-            label7.Location = new Point(464, 267);
+            label7.Location = new Point(464, 315);
             label7.Name = "label7";
             label7.Size = new Size(216, 45);
             label7.TabIndex = 17;
@@ -245,11 +247,20 @@
             label9.TabIndex = 21;
             label9.Text = "Öğrenci Kaydetme";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(464, 96);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(245, 148);
+            pictureBox1.TabIndex = 22;
+            pictureBox1.TabStop = false;
+            // 
             // ogrenci_kaydet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(736, 715);
+            Controls.Add(pictureBox1);
             Controls.Add(label9);
             Controls.Add(button5);
             Controls.Add(label8);
@@ -262,7 +273,7 @@
             Controls.Add(label6);
             Controls.Add(textBox5);
             Controls.Add(label5);
-            Controls.Add(textBox4);
+            Controls.Add(txt_mail);
             Controls.Add(label4);
             Controls.Add(textBox3);
             Controls.Add(label3);
@@ -274,6 +285,7 @@
             Controls.Add(button4);
             Name = "ogrenci_kaydet";
             Text = "öğrenci kaydetme";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -290,7 +302,7 @@
         private Label label4;
         private TextBox textBox3;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txt_mail;
         private Label label6;
         private TextBox textBox5;
         private Button button1;
@@ -302,5 +314,6 @@
         private Label label8;
         private Button button5;
         private Label label9;
+        private PictureBox pictureBox1;
     }
 }

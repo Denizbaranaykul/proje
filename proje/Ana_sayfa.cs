@@ -25,7 +25,23 @@ namespace proje
                 string isim = GlobalDatabase.Dt.Rows[0]["isim"].ToString();//girenk kullanıcının ismi
                 string soyisim = GlobalDatabase.Dt.Rows[0]["soy_isim"].ToString();//giren kullanıcının soy adı
                 lbl_profil.Text = isim + " " + soyisim;
-
+                string query = "SELECT profil_foto FROM ogrenci_bilgi WHERE id=@id";
+                MySqlCommand komut = new MySqlCommand(query, GlobalDatabase.Conn);
+                komut.Parameters.AddWithValue("@id", GlobalDatabase.Dt.Rows[0]["id"]);
+                MySqlDataReader reader = komut.ExecuteReader();
+                if(reader.Read())
+                {
+                    byte[] fotoVerisi = (byte[])reader["profil_foto"];
+                    if (fotoVerisi.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(fotoVerisi))
+                        {
+                           
+                                pictureBox1.Image = Image.FromStream(ms);
+                           
+                        }
+                    }
+                }
 
             }
             mesajTimer.Interval = 60000; // 60.000 ms = 60 saniye
