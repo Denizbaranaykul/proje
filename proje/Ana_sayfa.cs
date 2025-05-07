@@ -192,8 +192,14 @@ namespace proje
 
         private void btn_makale_Click_1(object sender, EventArgs e)
         {
-            makale_goster goster= new makale_goster();
+            makale_goster goster = new makale_goster();
             goster.Show();
+        }
+
+        private void btn_eds_Click(object sender, EventArgs e)
+        {
+            egitim_destek_ogrnci eds_ogrenci=new egitim_destek_ogrnci();
+            eds_ogrenci.Show();
         }
     }
 }

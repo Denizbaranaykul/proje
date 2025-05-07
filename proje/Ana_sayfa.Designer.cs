@@ -348,6 +348,7 @@
             btn_eds.TabIndex = 1;
             btn_eds.Text = "Eğitim Destek Sistemi";
             btn_eds.UseVisualStyleBackColor = false;
+            btn_eds.Click += btn_eds_Click;
             // 
             // btn_obs
             // 

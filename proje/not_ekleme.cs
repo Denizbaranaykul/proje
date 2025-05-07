@@ -14,15 +14,20 @@ namespace proje
 {
     public partial class not_ekleme : Form
     {
-        private int ogretimElemaniId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]); // Öğretim elemanı ID'sini almak için
+       public static int ogretimElemaniId = Convert.ToInt32(GlobalDatabase.Dt.Rows[0]["id"]); // Öğretim elemanı ID'sini almak için
 
         public not_ekleme()
         {
             InitializeComponent();
 
-            LoadDersler();
+            LoadDersler(ogretimElemaniId);
         }
-        private void LoadDersler()
+
+        public void ders_yuklee(int ogretimElemani)
+        {
+            LoadDersler(ogretimElemani);
+        }
+        private void LoadDersler(int ogretimElemaniId)
         {
             try
             {

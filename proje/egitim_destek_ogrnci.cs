@@ -12,15 +12,15 @@ using MySql.Data.MySqlClient;
 
 namespace proje
 {
-    public partial class makale_goster : Form
+    public partial class egitim_destek_ogrnci : Form
     {
-        public makale_goster()
+        public egitim_destek_ogrnci()
         {
             InitializeComponent();
-            string sql = "SELECT id,baslik,yazar FROM makaleler";
-            ListeleMakaleler(sql);
+            string query = "SELECT id,adi,baslik,hafta FROM eds";
+            ListeleMakalelerVeEds(query);
         }
-        public void ListeleMakaleler(string query)
+        public void ListeleMakalelerVeEds(string query)
         {
             try
             {
@@ -36,8 +36,12 @@ namespace proje
                 MessageBox.Show("Listeleme hatası: " + ex.Message);
             }
         }
+        
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+       
+          
+
+        private void dataGridView1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -46,14 +50,14 @@ namespace proje
                 try
                 {
                     GlobalDatabase.Conn.Open();
-                    string query = "SELECT baslik, pdf_icerik FROM makaleler WHERE id = @id";
+                    string query = "SELECT baslik, pdf FROM eds WHERE id = @id";
                     MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
                     cmd.Parameters.AddWithValue("@id", id);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.Read())
                     {
-                        byte[] pdfBytes = (byte[])reader["pdf_icerik"];
+                        byte[] pdfBytes = (byte[])reader["pdf"];
                         string baslik = reader["baslik"].ToString();
 
                         SaveFileDialog sfd = new SaveFileDialog();
@@ -76,10 +80,6 @@ namespace proje
                 }
             }
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+    
     }
 }

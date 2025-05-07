@@ -26,8 +26,8 @@ namespace proje
             if (dosyaSec.ShowDialog() == DialogResult.OK)
             {
                 byte[] pdfBytes = File.ReadAllBytes(dosyaSec.FileName);
-                string baslik = label2.Text;
-                string yazar = label1.Text;
+                string baslik = txt_baslik.Text;
+                string yazar = txt_yazar.Text;
                 string dergi = txt_dergi.Text;
 
                 GlobalDatabase.Conn.Open();

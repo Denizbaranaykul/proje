@@ -113,8 +113,14 @@ namespace proje
 
         private void button9_Click(object sender, EventArgs e)
         {
-            makale_ekle ekle=new makale_ekle();
+            makale_ekle ekle = new makale_ekle();
             ekle.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            egitim_destek_yon edss = new egitim_destek_yon();
+            edss.Show();
         }
     }
 }

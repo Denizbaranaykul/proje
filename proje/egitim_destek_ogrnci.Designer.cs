@@ -1,6 +1,6 @@
 ﻿namespace proje
 {
-    partial class makale_goster
+    partial class egitim_destek_ogrnci
     {
         /// <summary>
         /// Required designer variable.
@@ -35,22 +35,21 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(8, 27);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(776, 426);
+            dataGridView1.Size = new Size(583, 230);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick_1;
             // 
-            // makale_goster
+            // egitim_destek_ogrnci
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(603, 309);
             Controls.Add(dataGridView1);
-            Name = "makale_goster";
-            Text = "makale_goster";
+            Name = "egitim_destek_ogrnci";
+            Text = "egitim_destek_ogrnci";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
