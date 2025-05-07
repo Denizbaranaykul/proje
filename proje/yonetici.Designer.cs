@@ -112,14 +112,14 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(btn_personel_ekle);
             panel1.Controls.Add(btn_ogrenci_ekle);
-            panel1.Location = new Point(3, 236);
+            panel1.Location = new Point(6, 283);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1315, 339);
+            panel1.Size = new Size(1315, 438);
             panel1.TabIndex = 13;
             // 
             // button12
             // 
-            button12.Location = new Point(879, 84);
+            button12.Location = new Point(877, 34);
             button12.Name = "button12";
             button12.Size = new Size(200, 91);
             button12.TabIndex = 11;
@@ -129,7 +129,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(1099, 220);
+            button11.Location = new Point(1097, 170);
             button11.Name = "button11";
             button11.Size = new Size(199, 91);
             button11.TabIndex = 10;
@@ -138,7 +138,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(879, 220);
+            button10.Location = new Point(877, 170);
             button10.Name = "button10";
             button10.Size = new Size(200, 91);
             button10.TabIndex = 9;
@@ -148,7 +148,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(635, 220);
+            button9.Location = new Point(633, 170);
             button9.Name = "button9";
             button9.Size = new Size(218, 91);
             button9.TabIndex = 8;
@@ -158,7 +158,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(462, 220);
+            button8.Location = new Point(460, 170);
             button8.Name = "button8";
             button8.Size = new Size(151, 91);
             button8.TabIndex = 7;
@@ -168,7 +168,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(233, 220);
+            button7.Location = new Point(231, 170);
             button7.Name = "button7";
             button7.Size = new Size(194, 91);
             button7.TabIndex = 6;
@@ -178,7 +178,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(15, 220);
+            button6.Location = new Point(13, 170);
             button6.Name = "button6";
             button6.Size = new Size(190, 91);
             button6.TabIndex = 5;
@@ -188,7 +188,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(1098, 84);
+            button5.Location = new Point(1096, 34);
             button5.Name = "button5";
             button5.Size = new Size(200, 91);
             button5.TabIndex = 4;
@@ -198,7 +198,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(635, 84);
+            button4.Location = new Point(633, 34);
             button4.Name = "button4";
             button4.Size = new Size(218, 91);
             button4.TabIndex = 3;
@@ -208,7 +208,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(462, 84);
+            button3.Location = new Point(460, 34);
             button3.Name = "button3";
             button3.Size = new Size(151, 91);
             button3.TabIndex = 2;
@@ -218,7 +218,7 @@
             // 
             // btn_personel_ekle
             // 
-            btn_personel_ekle.Location = new Point(233, 84);
+            btn_personel_ekle.Location = new Point(231, 34);
             btn_personel_ekle.Name = "btn_personel_ekle";
             btn_personel_ekle.Size = new Size(194, 91);
             btn_personel_ekle.TabIndex = 1;
@@ -228,7 +228,7 @@
             // 
             // btn_ogrenci_ekle
             // 
-            btn_ogrenci_ekle.Location = new Point(15, 84);
+            btn_ogrenci_ekle.Location = new Point(13, 34);
             btn_ogrenci_ekle.Name = "btn_ogrenci_ekle";
             btn_ogrenci_ekle.Size = new Size(190, 91);
             btn_ogrenci_ekle.TabIndex = 0;
@@ -251,7 +251,7 @@
             panel2.Controls.Add(btn_profil);
             panel2.Location = new Point(3, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1315, 283);
+            panel2.Size = new Size(1318, 283);
             panel2.TabIndex = 14;
             // 
             // btn_oturum
@@ -312,7 +312,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1317, 579);
+            ClientSize = new Size(1322, 725);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "yonetici";

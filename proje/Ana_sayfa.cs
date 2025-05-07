@@ -198,8 +198,14 @@ namespace proje
 
         private void btn_eds_Click(object sender, EventArgs e)
         {
-            egitim_destek_ogrnci eds_ogrenci=new egitim_destek_ogrnci();
+            egitim_destek_ogrnci eds_ogrenci = new egitim_destek_ogrnci();
             eds_ogrenci.Show();
+        }
+
+        private void btn_ebs_Click(object sender, EventArgs e)
+        {
+            Erasmus erasmus=new Erasmus();  
+            erasmus.Show();
         }
     }
 }

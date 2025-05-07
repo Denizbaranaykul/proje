@@ -338,6 +338,7 @@
             btn_ebs.TabIndex = 2;
             btn_ebs.Text = "Erasmus Bilgi Sistemi";
             btn_ebs.UseVisualStyleBackColor = false;
+            btn_ebs.Click += btn_ebs_Click;
             // 
             // btn_eds
             // 
