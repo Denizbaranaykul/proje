@@ -28,68 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            button1 = new Button();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
+            textBox1 = new TextBox();
+            btn_ara = new Button();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // dataGridView1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "toplam öğrenci sayisi", "erkek öğrenci sayisi", "kız öğrenci sayisi", "mezun sayisi ", "akademik personel sayisi", "idari personel sayisi", "öğretim üyesi sayisi", "araştırma gorevlisi sayisi", "öğretim görevlisi sayisi", "prof. dr. sayisi", "doç. dr. sayisi", "dr. öğr. üyesi sayisi" });
-            comboBox1.Location = new Point(41, 85);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(234, 28);
-            comboBox1.TabIndex = 4;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(417, 85);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 28);
-            button1.TabIndex = 5;
-            button1.Text = "göster";
-            button1.UseVisualStyleBackColor = true;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 79);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(698, 340);
+            dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(96, 56);
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(12, 30);
             label1.Name = "label1";
-            label1.Size = new Size(47, 20);
-            label1.TabIndex = 6;
-            label1.Text = "sonuç";
+            label1.Size = new Size(198, 35);
+            label1.TabIndex = 1;
+            label1.Text = "Akademik Kadro";
             // 
-            // panel1
+            // textBox1
             // 
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(41, 214);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(250, 132);
-            panel1.TabIndex = 7;
+            textBox1.Location = new Point(750, 171);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(257, 27);
+            textBox1.TabIndex = 2;
+            // 
+            // btn_ara
+            // 
+            btn_ara.Location = new Point(750, 254);
+            btn_ara.Name = "btn_ara";
+            btn_ara.Size = new Size(257, 62);
+            btn_ara.TabIndex = 3;
+            btn_ara.Text = "arama yap";
+            btn_ara.UseVisualStyleBackColor = true;
+            btn_ara.Click += btn_ara_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F);
+            label2.Location = new Point(750, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(135, 35);
+            label2.TabIndex = 4;
+            label2.Text = "Arama yap";
             // 
             // akademik_kadro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(1027, 450);
+            Controls.Add(label2);
+            Controls.Add(btn_ara);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(dataGridView1);
             Name = "akademik_kadro";
             Text = "akademik_kadro";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private ComboBox comboBox1;
-        private Button button1;
+
+        private DataGridView dataGridView1;
         private Label label1;
-        private Panel panel1;
+        private TextBox textBox1;
+        private Button btn_ara;
+        private Label label2;
     }
 }

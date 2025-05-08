@@ -19,7 +19,7 @@ namespace proje
         {
             InitializeComponent();
             string query = "SELECT isim,soy_isim FROM yonetici_bilgi";
-            KisiListesiniYukle(comboBox1, query, "isim", "soy_isim"," ");
+            KisiListesiniYukle(comboBox1, query, "isim", "soy_isim", " ");
             OnayliTopluluklariListele();
         }
 
@@ -89,9 +89,9 @@ namespace proje
         {
             GlobalDatabase.Conn.Open();
             string query = "INSERT INTO topluluklar(topluluk_adi,danisman_hoca) VALUES(@isim,@hoca)";
-            MySqlCommand cmd = new MySqlCommand(query,GlobalDatabase.Conn);
-            cmd.Parameters.AddWithValue("@isim",textBox1.Text);
-            cmd.Parameters.AddWithValue("@hoca",comboBox1.Text);
+            MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
+            cmd.Parameters.AddWithValue("@isim", textBox1.Text);
+            cmd.Parameters.AddWithValue("@hoca", comboBox1.Text);
             cmd.ExecuteNonQuery();
             GlobalDatabase.Conn.Close();
             MessageBox.Show("Başvuru başarı ile yapıldı");
