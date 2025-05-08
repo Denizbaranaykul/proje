@@ -42,6 +42,8 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            cmb_numara = new ComboBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // txt_soru
@@ -160,11 +162,31 @@
             label6.TabIndex = 13;
             label6.Text = "doğru şık";
             // 
+            // cmb_numara
+            // 
+            cmb_numara.FormattingEnabled = true;
+            cmb_numara.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" });
+            cmb_numara.Location = new Point(37, 317);
+            cmb_numara.Name = "cmb_numara";
+            cmb_numara.Size = new Size(151, 28);
+            cmb_numara.TabIndex = 14;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(37, 276);
+            label7.Name = "label7";
+            label7.Size = new Size(185, 20);
+            label7.TabIndex = 15;
+            label7.Text = "sorunun numarasını seçiniz";
+            // 
             // FormSoruEkle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label7);
+            Controls.Add(cmb_numara);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -201,5 +223,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private ComboBox cmb_numara;
+        private Label label7;
     }
 }

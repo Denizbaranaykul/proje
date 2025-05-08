@@ -128,7 +128,7 @@ namespace proje
                 soruIndex++;
                 SoruGoster(soruIndex);
             }
-            
+
         }
         void TestiBitir()
         {

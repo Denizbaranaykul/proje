@@ -12,10 +12,13 @@ namespace proje
             InitializeComponent();
         }
 
-        
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+
+
+
+        private void btn_kaydet_Click(object sender, EventArgs e)
         {
+
             // 1. Boş kontrolü
             if (string.IsNullOrWhiteSpace(txt_soru.Text) ||
                 string.IsNullOrWhiteSpace(txt_secenek1.Text) ||
@@ -23,7 +26,8 @@ namespace proje
                 string.IsNullOrWhiteSpace(txt_secenek3.Text) ||
                 string.IsNullOrWhiteSpace(txt_secenek4.Text) ||
                 string.IsNullOrWhiteSpace(txt_secenek5.Text) ||
-                cmb_dogruSecenek.SelectedIndex == -1)
+                cmb_dogruSecenek.SelectedIndex == -1 ||
+                cmb_numara.SelectedItem == null)
             {
                 MessageBox.Show("Lütfen tüm alanları doldurun.");
                 return;
@@ -31,12 +35,19 @@ namespace proje
 
             try
             {
-                // 2. Veritabanına ekleme
+                int secilenId = Convert.ToInt32(cmb_numara.SelectedItem);
+
                 GlobalDatabase.Conn.Open();
 
-                string query = @"INSERT INTO sorular 
-                (soru, secenek1, secenek2, secenek3, secenek4, secenek5, dogru) 
-                VALUES (@soru, @s1, @s2, @s3, @s4, @s5, @dogru)";
+                string query = @"UPDATE sorular SET 
+                         soru = @soru, 
+                         secenek1 = @s1, 
+                         secenek2 = @s2, 
+                         secenek3 = @s3, 
+                         secenek4 = @s4, 
+                         secenek5 = @s5, 
+                         dogru = @dogru 
+                         WHERE id = @id";
 
                 MySqlCommand cmd = new MySqlCommand(query, GlobalDatabase.Conn);
                 cmd.Parameters.AddWithValue("@soru", txt_soru.Text);
@@ -46,17 +57,21 @@ namespace proje
                 cmd.Parameters.AddWithValue("@s4", txt_secenek4.Text);
                 cmd.Parameters.AddWithValue("@s5", txt_secenek5.Text);
                 cmd.Parameters.AddWithValue("@dogru", cmb_dogruSecenek.SelectedIndex); // A=0, B=1...
+                cmd.Parameters.AddWithValue("@id", secilenId); // hangi ID'li kayıt güncellenecek
 
-                cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
                 GlobalDatabase.Conn.Close();
 
-                MessageBox.Show("Soru başarıyla eklendi!");
-                this.Close(); // veya: formu temizlemek için alanları sıfırla
+                if (rowsAffected > 0)
+                    MessageBox.Show("Soru başarıyla güncellendi!");
+                else
+                    MessageBox.Show("Belirtilen ID ile eşleşen kayıt bulunamadı.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Veritabanı hatası: " + ex.Message);
             }
         }
+
     }
 }

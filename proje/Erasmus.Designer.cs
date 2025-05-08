@@ -48,17 +48,16 @@
             panel2.Controls.Add(rb3);
             panel2.Controls.Add(rb2);
             panel2.Controls.Add(rb1);
-            panel2.Location = new Point(22, 353);
+            panel2.Location = new Point(23, 322);
             panel2.Name = "panel2";
-            panel2.Size = new Size(429, 105);
+            panel2.Size = new Size(837, 105);
             panel2.TabIndex = 1;
             // 
             // rb5
             // 
-            rb5.AutoSize = true;
-            rb5.Location = new Point(359, 33);
+            rb5.Location = new Point(669, 22);
             rb5.Name = "rb5";
-            rb5.Size = new Size(38, 24);
+            rb5.Size = new Size(144, 69);
             rb5.TabIndex = 4;
             rb5.TabStop = true;
             rb5.Text = "E";
@@ -66,10 +65,9 @@
             // 
             // rb4
             // 
-            rb4.AutoSize = true;
-            rb4.Location = new Point(281, 33);
+            rb4.Location = new Point(501, 22);
             rb4.Name = "rb4";
-            rb4.Size = new Size(41, 24);
+            rb4.Size = new Size(158, 69);
             rb4.TabIndex = 3;
             rb4.TabStop = true;
             rb4.Text = "D";
@@ -77,10 +75,9 @@
             // 
             // rb3
             // 
-            rb3.AutoSize = true;
-            rb3.Location = new Point(195, 33);
+            rb3.Location = new Point(332, 22);
             rb3.Name = "rb3";
-            rb3.Size = new Size(39, 24);
+            rb3.Size = new Size(155, 69);
             rb3.TabIndex = 2;
             rb3.TabStop = true;
             rb3.Text = "C";
@@ -88,10 +85,9 @@
             // 
             // rb2
             // 
-            rb2.AutoSize = true;
-            rb2.Location = new Point(102, 33);
+            rb2.Location = new Point(171, 22);
             rb2.Name = "rb2";
-            rb2.Size = new Size(39, 24);
+            rb2.Size = new Size(141, 69);
             rb2.TabIndex = 1;
             rb2.TabStop = true;
             rb2.Text = "B";
@@ -99,10 +95,9 @@
             // 
             // rb1
             // 
-            rb1.AutoSize = true;
-            rb1.Location = new Point(25, 33);
+            rb1.Location = new Point(13, 22);
             rb1.Name = "rb1";
-            rb1.Size = new Size(40, 24);
+            rb1.Size = new Size(152, 69);
             rb1.TabIndex = 0;
             rb1.TabStop = true;
             rb1.Text = "A";
@@ -118,7 +113,7 @@
             // 
             // btn_Geri
             // 
-            btn_Geri.Location = new Point(473, 353);
+            btn_Geri.Location = new Point(231, 470);
             btn_Geri.Name = "btn_Geri";
             btn_Geri.Size = new Size(94, 105);
             btn_Geri.TabIndex = 3;
@@ -128,7 +123,7 @@
             // 
             // btn_Ileri
             // 
-            btn_Ileri.Location = new Point(597, 353);
+            btn_Ileri.Location = new Point(355, 470);
             btn_Ileri.Name = "btn_Ileri";
             btn_Ileri.Size = new Size(140, 105);
             btn_Ileri.TabIndex = 4;
@@ -138,7 +133,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(766, 353);
+            button1.Location = new Point(524, 470);
             button1.Name = "button1";
             button1.Size = new Size(94, 105);
             button1.TabIndex = 5;
@@ -159,7 +154,6 @@
             Name = "Erasmus";
             Text = "Erasmus";
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 

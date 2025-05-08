@@ -135,6 +135,7 @@
             button11.TabIndex = 10;
             button11.Text = "Erasmus başvuruları";
             button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button10
             // 

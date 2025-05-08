@@ -122,5 +122,11 @@ namespace proje
             egitim_destek_yon edss = new egitim_destek_yon();
             edss.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            FormSoruEkle formSoruEkle = new FormSoruEkle();
+            formSoruEkle.Show();
+        }
     }
 }
