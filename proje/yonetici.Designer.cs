@@ -52,6 +52,8 @@
             label1 = new Label();
             arama_textbox = new TextBox();
             pictureBox2 = new PictureBox();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -100,6 +102,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button12);
             panel1.Controls.Add(button11);
             panel1.Controls.Add(button10);
@@ -114,14 +118,14 @@
             panel1.Controls.Add(btn_ogrenci_ekle);
             panel1.Location = new Point(6, 283);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1315, 438);
+            panel1.Size = new Size(1315, 299);
             panel1.TabIndex = 13;
             // 
             // button12
             // 
-            button12.Location = new Point(877, 34);
+            button12.Location = new Point(722, 34);
             button12.Name = "button12";
-            button12.Size = new Size(200, 91);
+            button12.Size = new Size(152, 91);
             button12.TabIndex = 11;
             button12.Text = "normal mesaj";
             button12.UseVisualStyleBackColor = true;
@@ -129,9 +133,9 @@
             // 
             // button11
             // 
-            button11.Location = new Point(1097, 170);
+            button11.Location = new Point(907, 170);
             button11.Name = "button11";
-            button11.Size = new Size(199, 91);
+            button11.Size = new Size(189, 91);
             button11.TabIndex = 10;
             button11.Text = "Erasmus başvuruları";
             button11.UseVisualStyleBackColor = true;
@@ -139,9 +143,9 @@
             // 
             // button10
             // 
-            button10.Location = new Point(877, 170);
+            button10.Location = new Point(722, 170);
             button10.Name = "button10";
-            button10.Size = new Size(200, 91);
+            button10.Size = new Size(152, 91);
             button10.TabIndex = 9;
             button10.Text = "not ekleme";
             button10.UseVisualStyleBackColor = true;
@@ -149,9 +153,9 @@
             // 
             // button9
             // 
-            button9.Location = new Point(633, 170);
+            button9.Location = new Point(550, 170);
             button9.Name = "button9";
-            button9.Size = new Size(218, 91);
+            button9.Size = new Size(142, 91);
             button9.TabIndex = 8;
             button9.Text = "makale ekleme";
             button9.UseVisualStyleBackColor = true;
@@ -159,7 +163,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(460, 170);
+            button8.Location = new Point(367, 170);
             button8.Name = "button8";
             button8.Size = new Size(151, 91);
             button8.TabIndex = 7;
@@ -169,9 +173,9 @@
             // 
             // button7
             // 
-            button7.Location = new Point(231, 170);
+            button7.Location = new Point(198, 170);
             button7.Name = "button7";
-            button7.Size = new Size(194, 91);
+            button7.Size = new Size(139, 91);
             button7.TabIndex = 6;
             button7.Text = "kariyer destek sistemine ekleme";
             button7.UseVisualStyleBackColor = true;
@@ -181,7 +185,7 @@
             // 
             button6.Location = new Point(13, 170);
             button6.Name = "button6";
-            button6.Size = new Size(190, 91);
+            button6.Size = new Size(155, 91);
             button6.TabIndex = 5;
             button6.Text = "edsye ekleme";
             button6.UseVisualStyleBackColor = true;
@@ -189,9 +193,9 @@
             // 
             // button5
             // 
-            button5.Location = new Point(1096, 34);
+            button5.Location = new Point(906, 34);
             button5.Name = "button5";
-            button5.Size = new Size(200, 91);
+            button5.Size = new Size(190, 91);
             button5.TabIndex = 4;
             button5.Text = "kütüphaneye kitap ekleme";
             button5.UseVisualStyleBackColor = true;
@@ -199,9 +203,9 @@
             // 
             // button4
             // 
-            button4.Location = new Point(633, 34);
+            button4.Location = new Point(550, 34);
             button4.Name = "button4";
-            button4.Size = new Size(218, 91);
+            button4.Size = new Size(142, 91);
             button4.TabIndex = 3;
             button4.Text = "toplu mesaj";
             button4.UseVisualStyleBackColor = true;
@@ -209,7 +213,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(460, 34);
+            button3.Location = new Point(367, 34);
             button3.Name = "button3";
             button3.Size = new Size(151, 91);
             button3.TabIndex = 2;
@@ -219,9 +223,9 @@
             // 
             // btn_personel_ekle
             // 
-            btn_personel_ekle.Location = new Point(231, 34);
+            btn_personel_ekle.Location = new Point(198, 34);
             btn_personel_ekle.Name = "btn_personel_ekle";
-            btn_personel_ekle.Size = new Size(194, 91);
+            btn_personel_ekle.Size = new Size(139, 91);
             btn_personel_ekle.TabIndex = 1;
             btn_personel_ekle.Text = "yönetici personel ekleme";
             btn_personel_ekle.UseVisualStyleBackColor = true;
@@ -231,7 +235,7 @@
             // 
             btn_ogrenci_ekle.Location = new Point(13, 34);
             btn_ogrenci_ekle.Name = "btn_ogrenci_ekle";
-            btn_ogrenci_ekle.Size = new Size(190, 91);
+            btn_ogrenci_ekle.Size = new Size(155, 91);
             btn_ogrenci_ekle.TabIndex = 0;
             btn_ogrenci_ekle.Text = "öğrenci ekleme";
             btn_ogrenci_ekle.UseVisualStyleBackColor = true;
@@ -309,11 +313,30 @@
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            button1.Location = new Point(1123, 170);
+            button1.Name = "button1";
+            button1.Size = new Size(181, 91);
+            button1.TabIndex = 13;
+            button1.Text = "Erasmus başvuruları";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1122, 34);
+            button2.Name = "button2";
+            button2.Size = new Size(182, 91);
+            button2.TabIndex = 12;
+            button2.Text = "öğrenci işleri sistemi";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
             // yonetici
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1322, 725);
+            ClientSize = new Size(1322, 584);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "yonetici";
@@ -352,5 +375,7 @@
         private Label label1;
         private TextBox arama_textbox;
         private Button btn_oturum;
+        private Button button1;
+        private Button button2;
     }
 }

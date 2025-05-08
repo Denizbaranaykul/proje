@@ -316,7 +316,7 @@
             btn_dpvm.Name = "btn_dpvm";
             btn_dpvm.Size = new Size(194, 95);
             btn_dpvm.TabIndex = 4;
-            btn_dpvm.Text = "şikayet ve öneri ";
+            btn_dpvm.Text = "toplu mesaj";
             btn_dpvm.UseVisualStyleBackColor = false;
             // 
             // btn_oibs
@@ -326,8 +326,9 @@
             btn_oibs.Name = "btn_oibs";
             btn_oibs.Size = new Size(194, 95);
             btn_oibs.TabIndex = 3;
-            btn_oibs.Text = "Öğrenci İşleri Bilgi Sistemi";
+            btn_oibs.Text = "yönetmelikler";
             btn_oibs.UseVisualStyleBackColor = false;
+            btn_oibs.Click += btn_oibs_Click;
             // 
             // btn_ebs
             // 

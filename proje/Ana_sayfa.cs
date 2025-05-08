@@ -204,8 +204,14 @@ namespace proje
 
         private void btn_ebs_Click(object sender, EventArgs e)
         {
-            Erasmus erasmus=new Erasmus();  
+            Erasmus erasmus = new Erasmus();
             erasmus.Show();
+        }
+
+        private void btn_oibs_Click(object sender, EventArgs e)
+        {
+            yonetmelikler yonetmelikler = new yonetmelikler();
+            yonetmelikler.Show();
         }
     }
 }

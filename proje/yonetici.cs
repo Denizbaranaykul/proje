@@ -128,5 +128,11 @@ namespace proje
             FormSoruEkle formSoruEkle = new FormSoruEkle();
             formSoruEkle.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            yon_yonetmelikler yon_=new yon_yonetmelikler();
+            yon_.Show();
+        }
     }
 }
