@@ -16,12 +16,13 @@ namespace proje
         public kampüs_harita()
         {
             InitializeComponent();
+            haritaa("kuşbakışı_harita");
         }
 
 
-        private void harita(int harita)
+        private void haritaa(string harita)
         {
-            pictureBox1.Image = Image.FromFile(@"C:\Users\90551\OneDrive\Masaüstü\dbb\" + harita + ".png");
+            pictureBox1.Image = Image.FromFile(@"C:\Users\Deniz\Desktop\dbb\" + harita + ".png");
         }
 
 
@@ -31,10 +32,10 @@ namespace proje
             switch (harita)
             {
                 case "kuşbakışı harita":
-                    pictureBox1.Image = Image.FromFile(@"C:\Users\90551\OneDrive\Masaüstü\dbb\kuşbakışı_harita.png");
+                    haritaa("kuşbakışı_harita");
                     break;
                 case "uydu harita":
-                    pictureBox1.Image = Image.FromFile(@"C:\Users\90551\OneDrive\Masaüstü\dbb\uydu_harita.png");
+                    haritaa("uydu_harita");
                     break;
                 
                 default:break;

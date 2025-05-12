@@ -33,6 +33,8 @@
             pictureBox1 = new PictureBox();
             Close_btn = new Button();
             panel1 = new Panel();
+            button1 = new Button();
+            button2 = new Button();
             button12 = new Button();
             button11 = new Button();
             button10 = new Button();
@@ -52,8 +54,6 @@
             label1 = new Label();
             arama_textbox = new TextBox();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -120,6 +120,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1315, 299);
             panel1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(1123, 170);
+            button1.Name = "button1";
+            button1.Size = new Size(181, 91);
+            button1.TabIndex = 13;
+            button1.Text = "bölüm ekleme ve ders ekleme";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1122, 34);
+            button2.Name = "button2";
+            button2.Size = new Size(182, 91);
+            button2.TabIndex = 12;
+            button2.Text = "öğrenci işleri sistemi";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // button12
             // 
@@ -312,25 +331,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1123, 170);
-            button1.Name = "button1";
-            button1.Size = new Size(181, 91);
-            button1.TabIndex = 13;
-            button1.Text = "Erasmus başvuruları";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(1122, 34);
-            button2.Name = "button2";
-            button2.Size = new Size(182, 91);
-            button2.TabIndex = 12;
-            button2.Text = "öğrenci işleri sistemi";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
             // 
             // yonetici
             // 

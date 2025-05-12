@@ -40,7 +40,7 @@
             label5 = new Label();
             txt_mail = new TextBox();
             label6 = new Label();
-            textBox5 = new TextBox();
+            txt_sifre = new TextBox();
             button1 = new Button();
             checkedListBox1 = new CheckedListBox();
             button2 = new Button();
@@ -154,12 +154,12 @@
             label6.TabIndex = 12;
             label6.Text = "şifre";
             // 
-            // textBox5
+            // txt_sifre
             // 
-            textBox5.Location = new Point(233, 283);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(195, 27);
-            textBox5.TabIndex = 11;
+            txt_sifre.Location = new Point(233, 283);
+            txt_sifre.Name = "txt_sifre";
+            txt_sifre.Size = new Size(195, 27);
+            txt_sifre.TabIndex = 11;
             // 
             // button1
             // 
@@ -271,7 +271,7 @@
             Controls.Add(checkedListBox1);
             Controls.Add(button1);
             Controls.Add(label6);
-            Controls.Add(textBox5);
+            Controls.Add(txt_sifre);
             Controls.Add(label5);
             Controls.Add(txt_mail);
             Controls.Add(label4);
@@ -304,7 +304,7 @@
         private Label label5;
         private TextBox txt_mail;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox txt_sifre;
         private Button button1;
         private CheckedListBox checkedListBox1;
         private Button button2;

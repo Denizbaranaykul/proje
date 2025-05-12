@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using static proje.Giris;
 using MySql.Data.MySqlClient;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Net;
+using System.Net.Mail;
 
 namespace proje
 {
@@ -56,7 +58,6 @@ namespace proje
                 // Bağlantı açık değilse aç
                 if (GlobalDatabase.Conn == null || GlobalDatabase.Conn.State == ConnectionState.Closed)
                 {
-                    GlobalDatabase.Conn = new MySqlConnection("Server=localhost;Database=paü_app;Uid=root;Pwd=D3n!Z-25/11/2004?");
                     GlobalDatabase.Conn.Open();
                 }
 
@@ -71,8 +72,14 @@ namespace proje
                     string dosyaAdi = reader["dosya_adi"].ToString();
                     byte[] dosyaVerisi = (byte[])reader["dosya_icerik"];
                     string mail=reader["e_mail"].ToString();
+                    char[] sifre=mail.ToCharArray();
+                    DateTime x=DateTime.Now;
+                    int yil = x.Year;
+                    yil = yil / 2000;
+                    string password = sifre[0] + sifre[2] + sifre[4] + sifre[6]+yil+"paü";
                     txt_mail.Text= mail;
-                     profilFotoBytes = (byte[])reader["profil_foto"];
+                    txt_sifre.Text = password;
+                    profilFotoBytes = (byte[])reader["profil_foto"];
                     
                     if (!reader.IsDBNull(reader.GetOrdinal("profil_foto")))
                     {
@@ -137,6 +144,31 @@ namespace proje
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //şifreyi kullanıcıya mail attım kısım
+            string aliciMail = txt_mail.Text; 
+            string konu = "Üniversite uygulaması şifreniz";
+            string icerik = "şifreniz : "+txt_sifre.Text;
+            MailMessage mesaj = new MailMessage();
+            mesaj.From = new MailAddress("seninmailadresin@gmail.com");
+            mesaj.To.Add(aliciMail);
+            mesaj.Subject = konu;
+            mesaj.Body = icerik;
+
+            
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.Credentials = new NetworkCredential("daykul75@gmail.com", "vxmb neta avji blgz");
+            smtp.EnableSsl = true;
+
+            try
+            {
+                smtp.Send(mesaj);
+                Console.WriteLine("Mail gönderildi.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hata: " + ex.Message);
+            }
+            //öğrenciyi veritabanına ekliyorum
             GlobalDatabase.Conn.Open();
             string sorgu = "insert into ogrenci_bilgi (Tc,isim,soy_isim,bolum,email,sifre,durum,profil_foto) VALUES(@tc,@isim,@soy_isim,@bolum,@email,@sifre,@durum,@foto)";
 
@@ -146,7 +178,7 @@ namespace proje
             cmd.Parameters.AddWithValue("@soy_isim", textBox2.Text);
             cmd.Parameters.AddWithValue("@bolum", textBox3.Text);
             cmd.Parameters.AddWithValue("@email", txt_mail.Text);
-            cmd.Parameters.AddWithValue("@sifre", textBox5.Text);
+            cmd.Parameters.AddWithValue("@sifre", txt_sifre.Text);
             cmd.Parameters.AddWithValue("@durum", "aktif");
             cmd.Parameters.AddWithValue("@foto",profilFotoBytes);
             cmd.ExecuteNonQuery();
@@ -157,12 +189,12 @@ namespace proje
             textBox2.Clear();
             textBox3.Clear();
             txt_mail.Clear();
-            textBox5.Clear();
+            txt_sifre.Clear();
             pictureBox1.Image = null;
             box();
 
         }
-
+        //öğrenci silme fonksiyonu
         private void button3_Click(object sender, EventArgs e)
         {
             if (checkedListBox1.CheckedItems.Count == 0)
@@ -218,7 +250,7 @@ namespace proje
 
 
         }
-
+        //öğrencileri pasif hale getirme
         private void button2_Click(object sender, EventArgs e)
         {
             string query = "UPDATE ogrenci_bilgi SET durum = @durum WHERE isim = @isim and soy_isim=@soy_isim";
@@ -233,9 +265,9 @@ namespace proje
                 string tam_isim = item.ToString();
                 string[] dizi = tam_isim.Split("-");
 
-                // Ad ve soyadı alıyoruz
-                string ad = dizi[0].Trim();   // isim
-                string soyad = dizi[1].Trim(); // soyisim
+               
+                string ad = dizi[0].Trim();   
+                string soyad = dizi[1].Trim(); 
 
                 MySqlCommand komutQuery = new MySqlCommand(sorgu, GlobalDatabase.Conn);
                 komutQuery.Parameters.AddWithValue("@durum",durum);
